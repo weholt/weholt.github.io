@@ -1,0 +1,42 @@
+site_name: Weholt.org
+site_url: https://weholt.github.io/
+repo_url: https://github.com/weholt/
+docs_dir: src
+site_dir: docs/lab
+
+nav:
+- The Lab: index.md
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-5
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-3
+        name: Switch to light mode
+
+plugins:
+- search
+
+markdown_extensions:
+  - admonition
+  - mkautodoc
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets

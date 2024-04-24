@@ -1,0 +1,4 @@
+mkdocs-material
+mkdocstrings-python
+mkautodoc
+mkdocs-coverage

@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Weholt Development Labs","text":""},{"location":"#welcome","title":"Welcome","text":"<p>Right now, there's not much here, but in the coming weeks I'll write something about me free software projects.</p> <p>Stay tuned.</p>"}]}
