@@ -8,3 +8,13 @@ div.autodoc-docstring {
     padding-left: 20px;
     margin-bottom: 15px;
   }
+
+  .profile-img {
+    border-radius: 12px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;    
+    margin-bottom: 50px;
+  }
