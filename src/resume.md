@@ -34,6 +34,102 @@ Ok, so I love Python. No, really. I. Love. Programming. In. Python. As mentioned
 
 So why is this feeling so strong for a friggin' programming language? Beside the mentioned documentation of Python itself, syntax and readability of the language, or the amount of third-party packages available, the main thing making it so great is that it's the language with shortest distance between idea and working code. That's the big one.
 
+But my love for Python is also linked to a few great projects:
+
+### [Django](https://www.djangoproject.com/)
+> Django makes it easier to build better web apps more quickly and with less code.
+
+### [Wagtail CMS](https://wagtail.org/)
+
+> Wagtail is a leading open source CMS
+
+### [HTMX](https://htmx.org/)
+
+Not directly Python, but this has made the job of adding modern user experience to traditional Django views very easy:
+
+> htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
+
+### [Docker](https://www.docker.com/)
+
+> Docker helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management.
+
+Another strictly not Python, allthough python is used in several parts of the Docker eco-system, and it makes deployment and distribution of Python projects very easy.
+
+### [Pillow](https://python-pillow.org/)
+
+> The Python Imaging Library adds image processing capabilities to your Python interpreter. This library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities. The core image library is designed for fast access to data stored in a few basic pixel formats. It should provide a solid foundation for a general image processing tool.
+
+```python
+import os, sys
+from PIL import Image
+
+size = (128, 128)
+
+for infile in sys.argv[1:]:
+    outfile = os.path.splitext(infile)[0] + ".thumbnail"
+    if infile != outfile:
+        try:
+            with Image.open(infile) as im:
+                im.thumbnail(size)
+                im.save(outfile, "JPEG")
+        except OSError:
+            print("cannot create thumbnail for", infile)
+```
+
+### [Requests](https://requests.readthedocs.io/en/latest/)
+
+> Requests is an elegant and simple HTTP library for Python, built for human beings.
+
+```python
+>>> r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+>>> r.status_code
+200
+>>> r.headers['content-type']
+'application/json; charset=utf8'
+>>> r.encoding
+'utf-8'
+>>> r.text
+'{"type":"User"...'
+>>> r.json()
+{'private_gists': 419, 'total_private_repos': 77, ...}
+```
+
+### [CookieCutter](https://github.com/cookiecutter/cookiecutter)
+
+> Create projects swiftly from cookiecutters (project templates) with this command-line utility. Ideal for generating Python package projects and more.
+
+### [Selenium WebDriver](https://www.selenium.dev/)
+> If you want to create robust, browser-based regression automation suites and tests, scale and distribute scripts across many environments, then you want to use Selenium WebDriver, a collection of language specific bindings to drive a browser - the way it is meant to be driven.
+
+### [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
+
+> The Django Debug Toolbar is a configurable set of panels that display various debug information about the current request/response and when clicked, display more details about the panel's content.
+
+![Screenshot](https://camo.githubusercontent.com/49a05b6e1d31ea8f3943e43b374bf28e5db3d38c7b16f12ff119a660303cbba6/68747470733a2f2f7261772e6769746875622e636f6d2f6a617a7a62616e642f646a616e676f2d64656275672d746f6f6c6261722f6d61696e2f6578616d706c652f646a616e676f2d64656275672d746f6f6c6261722e706e67)
+
+### [Beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/)
+
+> Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+
+### [Tox](https://tox.wiki/en/stable/index.html)
+
+> tox aims to automate and standardize testing in Python. It is part of a larger vision of easing the packaging, testing and release process of Python software
+
+### [Black](https://github.com/psf/black)
+
+> Black is the uncompromising Python code formatter. By using it, you agree to cede control over minutiae of hand-formatting. In return, Black gives you speed, determinism, and freedom from pycodestyle nagging about formatting. You will save time and mental energy for more important matters.
+
+### [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/)
+
+> **Documentation that simply works**
+
+> Write your documentation in Markdown and create a professional static site in minutes – searchable, customizable, in 60+ languages, for all devices.
+
+### [pre-commit](https://pre-commit.com/)
+> A framework for managing and maintaining multi-language pre-commit hooks.
+
+## Actually released projects
+
 Although I've programming for all these years, very little has been published or actually used. It was all done for my own amusment. The only things I've released that had some use are:
 
 ### DSE - Simplified "bulk" insert/update/delete for Django.
