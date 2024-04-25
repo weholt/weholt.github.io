@@ -39,9 +39,13 @@ But my love for Python is also linked to a few great projects:
 ### [Django](https://www.djangoproject.com/)
 > Django makes it easier to build better web apps more quickly and with less code.
 
+Django stands bove all other third-party packages, and is by far my most loved piece of Python code, beside Python itself. 
+
 ### [Wagtail CMS](https://wagtail.org/)
 
 > Wagtail is a leading open source CMS
+
+Wagtail is a CMS built on-top of Django, with a great user interface for creators, nice documentation and a helpful community for developers, and is just all over a fantastic project.
 
 ### [HTMX](https://htmx.org/)
 
@@ -127,6 +131,46 @@ for infile in sys.argv[1:]:
 
 ### [pre-commit](https://pre-commit.com/)
 > A framework for managing and maintaining multi-language pre-commit hooks.
+
+### [PyTest](https://docs.pytest.org/)
+> The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.
+
+I love writing unittest, and pytest really makes this easy:
+
+```python
+
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(3) == 5
+
+```
+
+To execute it:
+
+``` bash
+$ pytest
+=========================== test session starts ============================
+platform linux -- Python 3.x.y, pytest-8.x.y, pluggy-1.x.y
+rootdir: /home/sweet/project
+collected 1 item
+
+test_sample.py F                                                     [100%]
+
+================================= FAILURES =================================
+_______________________________ test_answer ________________________________
+
+    def test_answer():
+>       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+test_sample.py:6: AssertionError
+========================= short test summary info ==========================
+FAILED test_sample.py::test_answer - assert 4 == 5
+============================ 1 failed in 0.12s =============================
+```
 
 ## Actually released projects
 

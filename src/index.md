@@ -2,6 +2,4 @@
 
 ## Welcome
 
-Right now, there's not much here, but in the coming weeks I'll write something about me free software projects.
-
-Stay tuned.
+There's not much here right now, but do read [my resumè](resume.md) or my [thoughts on licensing software](license.md).

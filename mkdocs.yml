@@ -10,6 +10,8 @@ extra_css:
 nav:
 - The Lab: index.md
 - The Story / Resumè: resume.md
+- Thoughts on Licensing: license.md
+
 #- Blog:
 #    - blog/index.md
   
@@ -35,7 +37,6 @@ theme:
 
 plugins:
 - search
-
 - tags
 - blog:
     blog_dir: .
