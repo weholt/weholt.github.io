@@ -4,3 +4,4 @@ mkautodoc
 mkdocs-coverage
 mkdocs-rss-plugin
 invoke
+pyyaml

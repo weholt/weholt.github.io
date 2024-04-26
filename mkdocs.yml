@@ -3,6 +3,8 @@ site_url: https://weholt.github.io/
 repo_url: https://github.com/weholt/
 docs_dir: src
 site_dir: docs/lab
+author: Thomas Weholt
+author_email: thomas@weholt.org
 
 extra_css:
   - style.css
@@ -11,6 +13,7 @@ nav:
 - The Lab: index.md
 - The Story / Resumè: resume.md
 - Thoughts on Licensing: license.md
+- Today I Learned: til.md
 
 #- Blog:
 #    - blog/index.md
