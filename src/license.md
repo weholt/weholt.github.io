@@ -20,6 +20,9 @@ These are some thoughts on Free Software and Open Source. It's a work in progres
 > A vital, rollercoaster session about something that effects the livelihood of every developer - and is about finding the humanity in the centre of our software.
 
 
+### [Know Your Limits: On Surviving Open Source by Carlton Gibson](https://www.youtube.com/watch?v=YOZWF86TGmo)
+
+Dr. Carlton Gibson presents his talk, "Know Your Limits: On Surviving Open Source" to the Djangonaut Space 2024 Session 1 team.
 
 ### [What Part of "... for Life" Don't You Understand?" by Jacob Kaplan-Moss](https://www.youtube.com/watch?v=EqcuzSwySR4)
 
@@ -39,3 +42,13 @@ Richard Stallman comments on dual-licensing.
 ### [Various Licenses and Comments about Them](https://www.gnu.org/licenses/license-list.html)
 
 Comments on dual-licensing from the Gnu.org project.
+
+### [Corporate Open Source is Dead](https://www.jeffgeerling.com/blog/2024/corporate-open-source-dead?utm_source=tldrnewsletter)
+
+IBM is buying HashiCorp for $6.4 billion. That's four months after HashiCorp rugpulled their entire development community and ditched open source for the 'Business Source License.' As someone on Hacker News pointed out so eloquently:
+
+> IBM is like a juicer that takes all the delicious flavor out of a fruit
+
+skywhopper replied:
+
+> HashiCorp has done a good job of pre-draining any flavor it once had.
