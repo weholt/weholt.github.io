@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://weholt.github.io/til/</loc>
+         <lastmod>2024-04-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://weholt.github.io/blog/</loc>
          <lastmod>2024-04-26</lastmod>
          <changefreq>daily</changefreq>
