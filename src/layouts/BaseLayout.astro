@@ -52,14 +52,47 @@ const isDev = import.meta.env.DEV;
     <link rel="stylesheet" href={withBase("/styles/variant-themes.css")} />
     <link rel="stylesheet" href={withBase("/styles/photo-themes.css")} />
     <link rel="stylesheet" href={withBase("/styles/accent-themes.css")} />
+    <link rel="stylesheet" href={withBase("/styles/responsive.css")} />
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href={withBase("/")}>
-          <span class="brand__name">{settings.siteName.replace(/\.Org$/i, "")}</span><span class="brand__tld">.Org</span>
-        </a>
-        <nav class="main-nav" aria-label="Primary navigation">
+        <div class="site-header__bar">
+          <a class="brand" href={withBase("/")}>
+            <span class="brand__name">{settings.siteName.replace(/\.Org$/i, "")}</span><span class="brand__tld">.Org</span>
+          </a>
+          <div class="site-header__actions">
+            <button
+              type="button"
+              class="nav-toggle"
+              data-control="nav-toggle"
+              aria-expanded="false"
+              aria-controls="site-nav"
+            >
+              <span class="nav-toggle__bars" aria-hidden="true"></span>
+              <span class="sr-only">
+                <span data-lang="en">Menu</span>
+                <span data-lang="no">Meny</span>
+              </span>
+            </button>
+            <div class="site-controls">
+              <LangFlags lang={settings.defaultLanguage} />
+              <div class="shuffle-group">
+                {isDev && defaultThemeMeta && (
+                  <span class="dev-theme-label" data-theme-indicator aria-live="polite">
+                    <span data-lang="en">{defaultThemeMeta.label.en}</span>
+                    <span data-lang="no">{defaultThemeMeta.label.no}</span>
+                  </span>
+                )}
+                <button type="button" class="shuffle-btn" data-control="shuffle">
+                  <span data-lang="en">Shuffle</span>
+                  <span data-lang="no">Bytt</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="main-nav" id="site-nav" aria-label="Primary navigation">
           {nav.map((item) => (
             <a href={withBase(item.href)} aria-current={isNavActive(item.href) ? "page" : undefined}>
               <span data-lang="en">{item.en}</span>
@@ -67,21 +100,6 @@ const isDev = import.meta.env.DEV;
             </a>
           ))}
         </nav>
-        <div class="site-controls">
-          <LangFlags lang={settings.defaultLanguage} />
-          <div class="shuffle-group">
-            {isDev && defaultThemeMeta && (
-              <span class="dev-theme-label" data-theme-indicator aria-live="polite">
-                <span data-lang="en">{defaultThemeMeta.label.en}</span>
-                <span data-lang="no">{defaultThemeMeta.label.no}</span>
-              </span>
-            )}
-            <button type="button" class="shuffle-btn" data-control="shuffle">
-              <span data-lang="en">Shuffle</span>
-              <span data-lang="no">Bytt</span>
-            </button>
-          </div>
-        </div>
       </div>
     </header>
     <slot />
@@ -148,6 +166,25 @@ const isDev = import.meta.env.DEV;
           theme: randomFrom(themes),
           voice: null
         });
+      });
+      const siteHeader = document.querySelector(".site-header");
+      const navToggle = document.querySelector("[data-control='nav-toggle']");
+      const closeNav = () => {
+        siteHeader?.classList.remove("is-nav-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      };
+      navToggle?.addEventListener("click", () => {
+        const open = siteHeader?.classList.toggle("is-nav-open");
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      document.querySelectorAll(".main-nav a").forEach((link) => {
+        link.addEventListener("click", closeNav);
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeNav();
+      });
+      window.matchMedia("(min-width: 641px)").addEventListener("change", (event) => {
+        if (event.matches) closeNav();
       });
     </script>
   </body>

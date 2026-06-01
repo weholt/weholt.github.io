@@ -1,0 +1,359 @@
+/* Mobile & tablet — loaded after theme CSS so these rules win. */
+
+:root {
+  --page-gutter: clamp(1rem, 4vw, 1.25rem);
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle__bars {
+  position: relative;
+  width: 1.1rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: background 150ms ease;
+}
+
+.nav-toggle__bars::before,
+.nav-toggle__bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 150ms ease, top 150ms ease;
+}
+
+.nav-toggle__bars::before {
+  top: -6px;
+}
+
+.nav-toggle__bars::after {
+  top: 6px;
+}
+
+.site-header.is-nav-open .nav-toggle__bars {
+  background: transparent;
+}
+
+.site-header.is-nav-open .nav-toggle__bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.site-header.is-nav-open .nav-toggle__bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.site-header__bar {
+  display: contents;
+}
+
+.site-header__actions {
+  display: contents;
+}
+
+@media (max-width: 900px) {
+  html {
+    overflow-x: clip;
+  }
+
+  .site-header,
+  .site-footer,
+  .hero,
+  .section,
+  .editorial-hero,
+  .photo-hero,
+  .page-shell,
+  .site-header__inner {
+    width: min(var(--max), calc(100% - 2 * var(--page-gutter)));
+  }
+
+  /* Beat per-theme header grid rules from global + accent CSS. */
+  html[data-theme] .site-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0.65rem 0;
+  }
+
+  .site-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  html[data-theme] .brand,
+  html[data-theme] .main-nav,
+  html[data-theme] .site-controls {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
+  html[data-theme] .site-controls {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .dev-theme-label {
+    display: none;
+  }
+
+  .shuffle-btn {
+    padding: 0.45rem 0.65rem;
+  }
+
+  html[data-theme] .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.35rem;
+    padding: 0.35rem;
+    margin: 0;
+  }
+
+  html[data-theme] .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  html[data-theme] .main-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  html[data-theme="paper-ink"] .site-controls {
+    position: static;
+    right: auto;
+    top: auto;
+  }
+
+  html[data-theme="paper-ink"] .site-header__inner {
+    text-align: left;
+  }
+
+  html[data-theme="ocean-dusk"] .site-header__inner {
+    overflow-x: visible;
+  }
+
+  html[data-theme="studio-sidebar"] .site-header {
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+
+  html[data-theme="studio-sidebar"] .site-header__inner {
+    flex-direction: column;
+    height: auto;
+    max-width: none;
+    padding: 0.65rem 0;
+  }
+
+  html[data-theme="studio-sidebar"] .main-nav {
+    flex-direction: row;
+    flex: none;
+    align-items: center;
+  }
+
+  html[data-theme="studio-sidebar"] main,
+  html[data-theme="studio-sidebar"] .site-footer {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero,
+  .split,
+  .magazine-grid,
+  .photo-hero,
+  .about-header {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .photo-hero,
+  .section {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .hero,
+  .photo-hero,
+  .split,
+  .about-header {
+    gap: 1.25rem;
+  }
+
+  .photo-hero img {
+    max-height: min(60vh, 420px);
+    aspect-ratio: 4 / 5;
+  }
+
+  .card-grid,
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr));
+    gap: 0.75rem;
+  }
+
+  .about-header {
+    text-align: center;
+  }
+
+  .about-header .portrait {
+    max-width: min(220px, 70vw);
+    margin-inline: auto;
+  }
+
+  .project-card.compact {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .project-card.compact img {
+    min-height: 72px;
+  }
+
+  html[data-theme="documentation"] .project-card,
+  html[data-theme="documentation"] .article-card {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 1.5rem 0 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .markdown {
+    max-width: none;
+  }
+
+  .markdown pre:not(.shiki),
+  .markdown pre.shiki {
+    max-width: 100%;
+  }
+
+  .markdown table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  html[data-theme] .main-nav {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    overflow-y: auto;
+    max-height: min(70vh, 24rem);
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+  }
+
+  .site-header.is-nav-open .main-nav {
+    display: flex;
+  }
+
+  html[data-theme] .main-nav a {
+    width: 100%;
+    white-space: normal;
+    border-radius: var(--radius-sm);
+    min-height: 2.75rem;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .lang-flag__icon {
+    width: 1.25rem;
+  }
+
+  .shuffle-btn {
+    font-size: 0.72rem;
+    padding: 0.42rem 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-gutter: 0.85rem;
+  }
+
+  .hero h1,
+  .editorial-hero h1,
+  .photo-hero h1,
+  .page-shell h1 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .tag-list {
+    gap: 0.3rem 0.65rem;
+  }
+}
