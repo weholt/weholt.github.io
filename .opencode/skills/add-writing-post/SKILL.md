@@ -13,6 +13,10 @@ metadata:
 
 Writing posts appear on `/writing/` when `status` is `"published"`. Each post lives in its own folder under `src/content/articles/`.
 
+## Critical
+
+We do not accept AI slop on this site. See **personal-homepage-content** (Critical) and [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Write in Thomas's voice — concrete details, no generic LLM filler.
+
 ## Hard boundaries
 
 See **content-boundaries**. Allowed:

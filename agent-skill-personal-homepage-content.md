@@ -13,6 +13,8 @@ The homepage is not a consulting sales page. It is an employer-facing portfolio 
 
 ## Non-negotiable rules
 
+0. **No AI slop.** We do not accept machine-generated filler on this site. Read [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and write like a human — specific, honest, Thomas's voice. Reject generic, over-polished prose.
+
 1. Do not edit layout, component or theme code when the task is only to add or update content.
 2. Use many small content files instead of one large JSON file.
 3. Keep public content bilingual unless the user explicitly requests otherwise.

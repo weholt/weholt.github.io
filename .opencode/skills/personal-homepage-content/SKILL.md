@@ -14,6 +14,14 @@ metadata:
 
 This site stores content as JSON and Markdown; Astro renders it statically.
 
+## Critical
+
+We do not accept AI slop on this site. All copy must sound like Thomas wrote it — specific, honest, and human.
+
+Before drafting or publishing visible text, read [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and avoid those patterns (hollow intros, filler transitions, vague enthusiasm, listicle voice, em-dash padding, etc.).
+
+Reject or rewrite any prose that reads generic, over-polished, or machine-generated.
+
 ## Prefer specific skills
 
 | Task | Skill |
