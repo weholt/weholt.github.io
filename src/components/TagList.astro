@@ -1,0 +1,33 @@
+---
+import Localize from "./Localize.astro";
+import { tagToSlug } from "../lib/tags";
+import { withBase } from "../lib/urls";
+import type { LocalizedString } from "../schemas/content";
+
+type Props = {
+  tags?: string[];
+  linkable?: boolean;
+  labels?: Record<string, LocalizedString>;
+};
+
+const { tags = [], linkable = true, labels = {} } = Astro.props;
+---
+{tags.length > 0 && (
+  <ul class="tag-list" aria-label="Tags">
+    {tags.map((tag) => (
+      <li class="tag-list__item">
+        {linkable ? (
+          <a class="tag-link" href={withBase(`/tags/${tagToSlug(tag)}/`)}>
+            <span class="tag-link__hash" aria-hidden="true">#</span>
+            <span class="tag-link__label">{labels[tag] ? <Localize value={labels[tag]} /> : tag}</span>
+          </a>
+        ) : (
+          <span class="tag-text">
+            <span class="tag-link__hash" aria-hidden="true">#</span>
+            <span class="tag-link__label">{labels[tag] ? <Localize value={labels[tag]} /> : tag}</span>
+          </span>
+        )}
+      </li>
+    ))}
+  </ul>
+)}

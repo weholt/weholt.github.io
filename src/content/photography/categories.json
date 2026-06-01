@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fujifilm",
+    "title": {
+      "en": "All Fujifilm",
+      "no": "Alt Fujifilm"
+    },
+    "description": {
+      "en": "A broad collection of photographs made with Fujifilm cameras.",
+      "no": "En bred samling fotografier tatt med Fujifilm-kameraer."
+    }
+  },
+  {
+    "id": "portraits",
+    "title": {
+      "en": "Portraits",
+      "no": "Portretter"
+    },
+    "description": {
+      "en": "People, faces and character.",
+      "no": "Folk, ansikter og karakter."
+    }
+  },
+  {
+    "id": "travel",
+    "title": {
+      "en": "Travel",
+      "no": "Reise"
+    },
+    "description": {
+      "en": "Places, movement and memory.",
+      "no": "Steder, bevegelse og minner."
+    }
+  },
+  {
+    "id": "street",
+    "title": {
+      "en": "Street",
+      "no": "Gatefoto"
+    },
+    "description": {
+      "en": "Urban scenes and everyday moments.",
+      "no": "Urbane scener og hverdagsøyeblikk."
+    }
+  },
+  {
+    "id": "landscape",
+    "title": {
+      "en": "Landscape",
+      "no": "Landskap"
+    },
+    "description": {
+      "en": "Open spaces, weather and light.",
+      "no": "Åpne rom, vær og lys."
+    }
+  }
+]

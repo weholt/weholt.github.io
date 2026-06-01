@@ -1,0 +1,22 @@
+{
+  "id": "atomic-framework",
+  "order": 1,
+  "title": {
+    "en": "The Atomic Framework",
+    "no": "Atomic-rammeverket"
+  },
+  "summary": {
+    "en": "Notes on a git-driven framework for structured, agent-assisted software development.",
+    "no": "Notater om et git-drevet rammeverk for strukturert, agentstøttet programvareutvikling."
+  },
+  "date": "2026-01-01",
+  "coverImage": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1400&h=800",
+  "tags": [
+    "Atomic",
+    "agents",
+    "git",
+    "software development"
+  ],
+  "status": "draft",
+  "featured": true
+}

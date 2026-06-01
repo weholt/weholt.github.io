@@ -1,0 +1,1 @@
+Very nice article, but my only concern is that this solution is vulnerable to directobjectreferenceattack (https://www.acunetix.com/blog/websecurityzone/whatareinsecuredirectobjectreferences/) A fix could be to add a UUIDfield as primary key to the Employee model instead. Anyway, keep up the good work :)

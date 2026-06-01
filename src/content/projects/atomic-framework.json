@@ -1,0 +1,27 @@
+{
+  "id": "atomic-framework",
+  "order": 1,
+  "title": {
+    "en": "Atomic Framework",
+    "no": "Atomic-rammeverket"
+  },
+  "summary": {
+    "en": "A git-driven framework idea for structured, agent-assisted software development.",
+    "no": "En git-drevet rammeverksidé for strukturert, agentstøttet programvareutvikling."
+  },
+  "description": {
+    "en": "A personal framework concept for issues, plans, agent workflows, validation and small controlled implementation loops.",
+    "no": "Et personlig rammeverkskonsept for issues, planer, agentflyter, validering og små kontrollerte implementasjonsløkker."
+  },
+  "repo": "atomic-framework",
+  "url": "https://github.com/weholt/atomic-framework",
+  "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=1200&h=750",
+  "status": "experimental",
+  "featured": true,
+  "tags": [
+    "agents",
+    "git",
+    "workflow",
+    "software development"
+  ]
+}

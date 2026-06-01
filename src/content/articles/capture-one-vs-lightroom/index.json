@@ -1,0 +1,23 @@
+{
+  "id": "capture-one-vs-lightroom",
+  "order": 19,
+  "title": {
+    "en": "Capture One — a review of sorts & comparison to Lightroom",
+    "no": "Capture One — a review of sorts & comparison to Lightroom"
+  },
+  "summary": {
+    "en": "Capture One — a review of sorts & comparison to Lightroom",
+    "no": "Capture One — a review of sorts & comparison to Lightroom"
+  },
+  "date": "2020-09-01",
+  "coverImage": "/images/medium/capture-one-vs-lightroom/image-001.jpg",
+  "tags": [
+    "photography",
+    "fujifilm",
+    "capture-one",
+    "lightroom",
+    "post-processing"
+  ],
+  "status": "published",
+  "featured": false
+}

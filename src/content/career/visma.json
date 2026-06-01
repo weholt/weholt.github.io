@@ -1,0 +1,19 @@
+{
+  "id": "visma",
+  "order": 0,
+  "period": "2017–present",
+  "role": {
+    "en": "System Developer",
+    "no": "Systemutvikler"
+  },
+  "company": "Visma",
+  "location": {
+    "en": "Porsgrunn, Norway",
+    "no": "Porsgrunn, Norge"
+  },
+  "description": {
+    "en": "Development of Workforce Management functionality in GAT Ressursstyring, with work involving complex systems, APIs, event-sourcing ideas and React-based frontend development.",
+    "no": "Utvikling av Workforce Management-funksjonalitet i GAT Ressursstyring, med arbeid på komplekse systemer, API-er, event-sourcing-ideer og React-baserte frontender."
+  },
+  "highlights": []
+}

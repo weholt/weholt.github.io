@@ -1,0 +1,19 @@
+---
+import Localize from "./Localize.astro";
+import TagList from "./TagList.astro";
+import { withBase } from "../lib/urls";
+import type { Project } from "../schemas/content";
+
+type Props = { project: Project; compact?: boolean };
+const { project, compact = false } = Astro.props;
+---
+<article class:list={["project-card", compact && "compact"]}>
+  {project.image && <img src={withBase(project.image)} alt="" loading="lazy" />}
+  <div class="card-body">
+    <p class="status">{project.status}</p>
+    <h3><Localize value={project.title} /></h3>
+    <p><Localize value={project.summary} /></p>
+    <TagList tags={project.tags} />
+    {project.url && <a class="text-link" href={project.url}>GitHub →</a>}
+  </div>
+</article>

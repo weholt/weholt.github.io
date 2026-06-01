@@ -1,0 +1,641 @@
+/* Accent themes — palettes and layouts not covered by core / variant / photo sets. */
+
+html[data-theme="aurora-night"] {
+  --bg: #060d14;
+  --surface: #0c1620;
+  --surface-elevated: #12202c;
+  --text: #e8f4f0;
+  --muted: #7a9a94;
+  --accent: #3ee8a5;
+  --accent-hover: #6ef0bc;
+  --border: rgba(62, 232, 165, 0.14);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 48px rgba(62, 232, 165, 0.04);
+  --radius: 14px;
+  --radius-sm: 8px;
+  color-scheme: dark;
+}
+
+html[data-theme="terracotta-atelier"] {
+  --bg: #ede4d8;
+  --surface: #f7f0e6;
+  --surface-elevated: #fffaf3;
+  --text: #2a1810;
+  --muted: #7a5c48;
+  --accent: #b84a1e;
+  --accent-hover: #963a16;
+  --border: rgba(42, 24, 16, 0.14);
+  --shadow: 0 2px 12px rgba(42, 24, 16, 0.08);
+  --radius: 6px;
+  --radius-sm: 4px;
+  --font-display: "Instrument Serif", "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+}
+
+html[data-theme="lavender-fog"] {
+  --bg: #ebe6f5;
+  --surface: #f6f3fb;
+  --surface-elevated: #ffffff;
+  --text: #2a2238;
+  --muted: #6b6080;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --border: rgba(42, 34, 56, 0.12);
+  --shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
+  color-scheme: light;
+}
+
+html[data-theme="neon-circuit"] {
+  --bg: #0c0118;
+  --surface: #160828;
+  --surface-elevated: #1f0c38;
+  --text: #f5eaff;
+  --muted: #b794d4;
+  --accent: #ff2a6d;
+  --accent-hover: #ff5c8f;
+  --border: rgba(255, 42, 109, 0.22);
+  --shadow: 0 0 24px rgba(255, 42, 109, 0.12), 0 12px 40px rgba(0, 0, 0, 0.5);
+  --radius: 4px;
+  --radius-sm: 2px;
+  --font-display: "Syne", "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+html[data-theme="mint-console"] {
+  --bg: #050a06;
+  --surface: #0a120b;
+  --surface-elevated: #0f1a10;
+  --text: #c8f5c8;
+  --muted: #5a8f62;
+  --accent: #4ade80;
+  --accent-hover: #86efac;
+  --border: rgba(74, 222, 128, 0.18);
+  --shadow: 0 0 20px rgba(74, 222, 128, 0.06);
+  --radius: 0;
+  --radius-sm: 0;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+
+html[data-theme="copper-patina"] {
+  --bg: #141f1c;
+  --surface: #1c2a26;
+  --surface-elevated: #243530;
+  --text: #e8f0ed;
+  --muted: #8aa89e;
+  --accent: #d4845a;
+  --accent-hover: #e09a72;
+  --border: rgba(90, 175, 160, 0.2);
+  --shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+  --radius: 10px;
+  --radius-sm: 6px;
+  color-scheme: dark;
+}
+
+html[data-theme="cherry-blossom"] {
+  --bg: #fdf0f3;
+  --surface: #fff8fa;
+  --surface-elevated: #ffffff;
+  --text: #3d1824;
+  --muted: #9a6070;
+  --accent: #db2777;
+  --accent-hover: #be185d;
+  --border: rgba(61, 24, 36, 0.1);
+  --shadow: 0 4px 20px rgba(219, 39, 119, 0.1);
+  --radius: 18px;
+  --radius-sm: 10px;
+  color-scheme: light;
+}
+
+html[data-theme="signal-noir"] {
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface-elevated: #222222;
+  --text: #fafafa;
+  --muted: #a3a3a3;
+  --accent: #facc15;
+  --accent-hover: #fde047;
+  --border: rgba(250, 204, 21, 0.2);
+  --shadow: 0 4px 0 rgba(250, 204, 21, 0.15);
+  --radius: 0;
+  --radius-sm: 0;
+  --font-display: "Space Grotesk", "DM Sans", sans-serif;
+  color-scheme: dark;
+}
+
+/* ─── Aurora Night: glowing underline nav ─── */
+
+html[data-theme="aurora-night"] .site-header {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--border);
+}
+
+html[data-theme="aurora-night"] .brand__tld {
+  color: var(--accent);
+}
+
+html[data-theme="aurora-night"] .main-nav {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  box-shadow: 0 0 32px rgba(62, 232, 165, 0.06);
+}
+
+html[data-theme="aurora-night"] .main-nav a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(62, 232, 165, 0.15);
+}
+
+html[data-theme="aurora-night"] .eyebrow,
+html[data-theme="aurora-night"] .section-kicker {
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(62, 232, 165, 0.35);
+}
+
+/* ─── Terracotta Atelier: centered masthead ─── */
+
+html[data-theme="terracotta-atelier"] .site-header {
+  background: var(--bg);
+  backdrop-filter: none;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+html[data-theme="terracotta-atelier"] .site-header__inner {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  text-align: center;
+  gap: 0.65rem;
+  padding: 1.1rem 0 0.85rem;
+  position: relative;
+}
+
+html[data-theme="terracotta-atelier"] .brand {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 400;
+  font-style: italic;
+}
+
+html[data-theme="terracotta-atelier"] .brand__tld {
+  color: var(--accent);
+  font-style: normal;
+}
+
+html[data-theme="terracotta-atelier"] .site-controls {
+  position: absolute;
+  right: 0;
+  top: 1rem;
+}
+
+html[data-theme="terracotta-atelier"] .main-nav {
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+html[data-theme="terracotta-atelier"] .main-nav a {
+  border-radius: 0;
+  padding: 0.2rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+html[data-theme="terracotta-atelier"] .main-nav a[aria-current="page"] {
+  background: transparent;
+  box-shadow: none;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+html[data-theme="terracotta-atelier"] .hero,
+html[data-theme="terracotta-atelier"] .section,
+html[data-theme="terracotta-atelier"] .editorial-hero,
+html[data-theme="terracotta-atelier"] .photo-hero {
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--border));
+}
+
+/* ─── Lavender Fog: soft pill nav ─── */
+
+html[data-theme="lavender-fog"] body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 58, 237, 0.12), transparent),
+    var(--bg);
+}
+
+html[data-theme="lavender-fog"] .site-header {
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: none;
+}
+
+html[data-theme="lavender-fog"] .main-nav {
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
+  border-radius: 999px;
+}
+
+html[data-theme="lavender-fog"] .main-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+html[data-theme="lavender-fog"] .button {
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+}
+
+/* ─── Neon Circuit: segmented glow bar ─── */
+
+html[data-theme="neon-circuit"] body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 42, 109, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 100%, rgba(5, 217, 232, 0.08), transparent 40%),
+    var(--bg);
+}
+
+html[data-theme="neon-circuit"] .site-header {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--border);
+}
+
+html[data-theme="neon-circuit"] .brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+html[data-theme="neon-circuit"] .brand__tld {
+  color: var(--accent);
+}
+
+html[data-theme="neon-circuit"] .main-nav {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(255, 42, 109, 0.1);
+}
+
+html[data-theme="neon-circuit"] .main-nav a {
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.8rem;
+  border-right: 1px solid var(--border);
+}
+
+html[data-theme="neon-circuit"] .main-nav a:last-child {
+  border-right: none;
+}
+
+html[data-theme="neon-circuit"] .main-nav a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+html[data-theme="neon-circuit"] .hero h1,
+html[data-theme="neon-circuit"] .page-shell h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 4vw, 2.85rem);
+}
+
+/* ─── Mint Console: terminal prompt nav ─── */
+
+html[data-theme="mint-console"] body {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(74, 222, 128, 0.02) 2px,
+      rgba(74, 222, 128, 0.02) 4px
+    ),
+    var(--bg);
+}
+
+html[data-theme="mint-console"] .site-header {
+  background: var(--surface);
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--border);
+}
+
+html[data-theme="mint-console"] .brand::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+html[data-theme="mint-console"] .brand {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+html[data-theme="mint-console"] .brand__tld {
+  color: var(--accent);
+}
+
+html[data-theme="mint-console"] .main-nav {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 0;
+}
+
+html[data-theme="mint-console"] .main-nav a {
+  border-radius: 0;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.75rem;
+  border-right: 1px solid var(--border);
+  color: var(--muted);
+}
+
+html[data-theme="mint-console"] .main-nav a:last-child {
+  border-right: none;
+}
+
+html[data-theme="mint-console"] .main-nav a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+html[data-theme="mint-console"] .hero,
+html[data-theme="mint-console"] .section,
+html[data-theme="mint-console"] .editorial-hero,
+html[data-theme="mint-console"] .photo-hero,
+html[data-theme="mint-console"] .project-card,
+html[data-theme="mint-console"] .article-card {
+  border-radius: 0;
+  border-color: var(--border);
+}
+
+html[data-theme="mint-console"] .hero h1,
+html[data-theme="mint-console"] .page-shell h1,
+html[data-theme="mint-console"] h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+html[data-theme="mint-console"] .button {
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Copper Patina: refined split header ─── */
+
+html[data-theme="copper-patina"] .site-header {
+  background: var(--surface);
+  backdrop-filter: none;
+  border-bottom: 3px solid color-mix(in srgb, var(--accent) 50%, #5aafa0);
+}
+
+html[data-theme="copper-patina"] .site-header__inner {
+  grid-template-columns: auto 1fr auto;
+}
+
+html[data-theme="copper-patina"] .brand {
+  font-family: var(--font-display);
+}
+
+html[data-theme="copper-patina"] .brand__tld {
+  color: var(--accent);
+}
+
+html[data-theme="copper-patina"] .main-nav {
+  justify-content: center;
+  border: none;
+  background: transparent;
+  gap: 0.35rem;
+}
+
+html[data-theme="copper-patina"] .main-nav a {
+  border-radius: 8px;
+  font-size: 0.82rem;
+  border: 1px solid transparent;
+}
+
+html[data-theme="copper-patina"] .main-nav a:hover {
+  border-color: color-mix(in srgb, #5aafa0 40%, var(--border));
+}
+
+html[data-theme="copper-patina"] .main-nav a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: none;
+}
+
+html[data-theme="copper-patina"] .eyebrow,
+html[data-theme="copper-patina"] .section-kicker {
+  color: #5aafa0;
+}
+
+/* ─── Cherry Blossom: airy floating nav ─── */
+
+html[data-theme="cherry-blossom"] body {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(219, 39, 119, 0.08), transparent 35%),
+    radial-gradient(circle at 10% 90%, rgba(251, 207, 232, 0.5), transparent 40%),
+    var(--bg);
+}
+
+html[data-theme="cherry-blossom"] .site-header {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+}
+
+html[data-theme="cherry-blossom"] .site-header__inner {
+  grid-template-columns: auto 1fr auto;
+  padding: 1rem 0;
+}
+
+html[data-theme="cherry-blossom"] .brand {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+html[data-theme="cherry-blossom"] .brand__tld {
+  color: var(--text);
+}
+
+html[data-theme="cherry-blossom"] .main-nav {
+  justify-content: center;
+  padding: 0.25rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, var(--border));
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+}
+
+html[data-theme="cherry-blossom"] .main-nav a[aria-current="page"] {
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+html[data-theme="cherry-blossom"] .hero,
+html[data-theme="cherry-blossom"] .section,
+html[data-theme="cherry-blossom"] .editorial-hero,
+html[data-theme="cherry-blossom"] .photo-hero {
+  border: 1px solid color-mix(in srgb, var(--accent) 12%, var(--border));
+  box-shadow: var(--shadow);
+}
+
+/* ─── Signal Noir: bold offset blocks ─── */
+
+html[data-theme="signal-noir"] .site-header {
+  background: var(--accent);
+  backdrop-filter: none;
+  border-bottom: 4px solid var(--text);
+}
+
+html[data-theme="signal-noir"] .site-header__inner {
+  grid-template-columns: auto 1fr auto;
+}
+
+html[data-theme="signal-noir"] .brand,
+html[data-theme="signal-noir"] .main-nav a,
+html[data-theme="signal-noir"] .shuffle-btn,
+html[data-theme="signal-noir"] .lang-flag {
+  color: var(--bg);
+}
+
+html[data-theme="signal-noir"] .brand__tld {
+  color: var(--bg);
+  opacity: 0.75;
+}
+
+html[data-theme="signal-noir"] .main-nav {
+  border: 2px solid var(--bg);
+  background: transparent;
+  border-radius: 0;
+  gap: 0;
+}
+
+html[data-theme="signal-noir"] .main-nav a {
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.75rem;
+  border-right: 2px solid var(--bg);
+  color: var(--bg);
+}
+
+html[data-theme="signal-noir"] .main-nav a:last-child {
+  border-right: none;
+}
+
+html[data-theme="signal-noir"] .main-nav a:hover {
+  background: color-mix(in srgb, var(--bg) 15%, transparent);
+  color: var(--bg);
+}
+
+html[data-theme="signal-noir"] .main-nav a[aria-current="page"] {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+html[data-theme="signal-noir"] .shuffle-btn {
+  border-color: var(--bg);
+}
+
+html[data-theme="signal-noir"] .shuffle-btn:hover {
+  background: var(--bg);
+  color: var(--accent);
+  border-color: var(--bg);
+}
+
+html[data-theme="signal-noir"] .lang-switch {
+  border-color: var(--bg);
+  background: transparent;
+}
+
+html[data-theme="signal-noir"] .hero,
+html[data-theme="signal-noir"] .section,
+html[data-theme="signal-noir"] .editorial-hero,
+html[data-theme="signal-noir"] .photo-hero {
+  border: 2px solid var(--text);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+html[data-theme="signal-noir"] .hero h1,
+html[data-theme="signal-noir"] .page-shell h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+html[data-theme="signal-noir"] .button {
+  border-radius: 0;
+  background: var(--accent);
+  border-color: var(--text);
+  color: var(--bg);
+  box-shadow: 3px 3px 0 var(--text);
+}
+
+html[data-theme="signal-noir"] .button:hover {
+  background: var(--accent-hover);
+  color: var(--bg);
+}
+
+/* ─── Mobile ─── */
+
+@media (max-width: 900px) {
+  html[data-theme="terracotta-atelier"] .site-controls {
+    position: static;
+    justify-content: center;
+  }
+
+  html[data-theme="terracotta-atelier"] .site-header__inner {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-theme="neon-circuit"] .main-nav,
+  html[data-theme="mint-console"] .main-nav,
+  html[data-theme="signal-noir"] .main-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  html[data-theme="signal-noir"] .site-header {
+    border-bottom-width: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="aurora-night"] .eyebrow,
+  html[data-theme="aurora-night"] .section-kicker {
+    text-shadow: none;
+  }
+}

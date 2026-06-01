@@ -1,0 +1,28 @@
+{
+  "id": "airgun-performance-index",
+  "order": 2,
+  "title": {
+    "en": "Airgun Performance Index",
+    "no": "Airgun Performance Index"
+  },
+  "summary": {
+    "en": "A Django-based site for airgun tuning recipes and performance information.",
+    "no": "Et Django-basert nettsted for tuning-oppskrifter og ytelsesinformasjon for luftvåpen."
+  },
+  "description": {
+    "en": "A former web project built with Python, Django, SQLite, HTMX, Nginx and Docker.",
+    "no": "Et tidligere webprosjekt bygget med Python, Django, SQLite, HTMX, Nginx og Docker."
+  },
+  "repo": "airgun-performance-index",
+  "url": "https://github.com/weholt/airgun-performance-index",
+  "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=1200&h=750",
+  "status": "historical",
+  "featured": false,
+  "tags": [
+    "Python",
+    "Django",
+    "SQLite",
+    "HTMX",
+    "Docker"
+  ]
+}

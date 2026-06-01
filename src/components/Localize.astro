@@ -1,0 +1,15 @@
+---
+import type { LocalizedString } from "../schemas/content";
+
+type Props = {
+  value: LocalizedString | string;
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+};
+
+const { value, as = "span", class: className = "" } = Astro.props;
+const Tag = as;
+const en = typeof value === "string" ? value : value.en;
+const no = typeof value === "string" ? value : value.no;
+---
+<Tag class={className} data-lang="en">{en}</Tag><Tag class={className} data-lang="no">{no}</Tag>

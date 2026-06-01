@@ -1,0 +1,19 @@
+{
+  "id": "gat-soft",
+  "order": 1,
+  "period": "2001–2017",
+  "role": {
+    "en": "System Developer",
+    "no": "Systemutvikler"
+  },
+  "company": "GAT-Soft",
+  "location": {
+    "en": "Porsgrunn, Norway",
+    "no": "Porsgrunn, Norge"
+  },
+  "description": {
+    "en": "Development of scheduling and Workforce Management functionality in GAT Ressursstyring.",
+    "no": "Utvikling av turnusplanlegging og Workforce Management-funksjonalitet i GAT Ressursstyring."
+  },
+  "highlights": []
+}

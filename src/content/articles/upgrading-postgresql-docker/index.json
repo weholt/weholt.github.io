@@ -1,0 +1,23 @@
+{
+  "id": "upgrading-postgresql-docker",
+  "order": 10,
+  "title": {
+    "en": "Upgrading PostgreSQL in a docker deployment",
+    "no": "Upgrading PostgreSQL in a docker deployment"
+  },
+  "summary": {
+    "en": "Recently, I had to upgrade an older Django-Docker-PostgreSQL deployment, only to discover that PostgreSQL 9.0 files weren’t compatible with PostgreSQL 15.0. After many hours of trying and failing, and searching the ne...",
+    "no": "Recently, I had to upgrade an older Django-Docker-PostgreSQL deployment, only to discover that PostgreSQL 9.0 files weren’t compatible with PostgreSQL 15.0. After many hours of trying and failing, and searching the ne..."
+  },
+  "date": "2023-02-28",
+  "coverImage": "/images/medium/upgrading-postgresql-docker/image-001.png",
+  "tags": [
+    "docker-compose",
+    "upgrade",
+    "postgresql",
+    "python",
+    "docker"
+  ],
+  "status": "published",
+  "featured": true
+}

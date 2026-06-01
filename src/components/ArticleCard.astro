@@ -1,0 +1,26 @@
+---
+import Localize from "./Localize.astro";
+import TagList from "./TagList.astro";
+import { withBase } from "../lib/urls";
+import type { Article } from "../schemas/content";
+
+type Props = { article: Article };
+const { article } = Astro.props;
+const articleHref = withBase(`/articles/${article.id}/`);
+---
+<article class="article-card">
+  {article.coverImage && (
+    <a class="card-cover-link" href={articleHref} aria-label={article.title.en}>
+      <img src={withBase(article.coverImage)} alt="" loading="lazy" />
+    </a>
+  )}
+  <div class="card-body">
+    <p class="status">
+      {article.pinned && <span class="pin-label"><span data-lang="en">Pinned</span><span data-lang="no">Festet</span> · </span>}
+      {article.status} · {article.date}
+    </p>
+    <h3><a href={articleHref}><Localize value={article.title} /></a></h3>
+    <p><Localize value={article.summary} /></p>
+    <TagList tags={article.tags} />
+  </div>
+</article>

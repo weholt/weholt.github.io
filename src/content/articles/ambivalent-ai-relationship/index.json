@@ -1,0 +1,22 @@
+{
+  "id": "ambivalent-ai-relationship",
+  "order": 0,
+  "title": {
+    "en": "An Ambivalent Relationship With AI",
+    "no": "Et ambivalent forhold til AI"
+  },
+  "summary": {
+    "en": "A personal and technical reflection on using AI tools heavily while remaining skeptical of hype, replacement narratives and careless automation.",
+    "no": "En personlig og teknisk refleksjon om å bruke AI-verktøy aktivt, men samtidig være skeptisk til hype, erstatningsfortellinger og uforsiktig automatisering."
+  },
+  "date": "2026-01-01",
+  "coverImage": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1400&h=800",
+  "tags": [
+    "AI",
+    "software development",
+    "work",
+    "automation"
+  ],
+  "status": "draft",
+  "featured": true
+}

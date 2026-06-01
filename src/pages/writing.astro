@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import { getSiteData } from "../lib/content";
+const data = getSiteData();
+const publishedArticles = data.articles.filter((article) => article.status === "published");
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="Writing">
+  <main class="page-shell">
+    <section class="section">
+      <p class="section-kicker">Writing</p>
+      <h1><span data-lang="en">Articles and notes</span><span data-lang="no">Artikler og notater</span></h1>
+      <p class="lead"><span data-lang="en">Writing about software, photography, open source, development workflows and personal technical experiments.</span><span data-lang="no">Tekster om programvare, fotografi, åpen kildekode, utviklingsflyt og personlige tekniske eksperimenter.</span></p>
+      <div class="article-list">{publishedArticles.map((article) => <ArticleCard article={article} />)}</div>
+    </section>
+  </main>
+</BaseLayout>

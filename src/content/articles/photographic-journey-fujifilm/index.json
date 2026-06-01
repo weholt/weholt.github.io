@@ -1,0 +1,22 @@
+{
+  "id": "photographic-journey-fujifilm",
+  "order": 25,
+  "title": {
+    "en": "My photographic journey and why Fujifilm?",
+    "no": "My photographic journey and why Fujifilm?"
+  },
+  "summary": {
+    "en": "My photographic journey and why Fujifilm?",
+    "no": "My photographic journey and why Fujifilm?"
+  },
+  "date": "2020-06-11",
+  "coverImage": "/images/medium/photographic-journey-fujifilm/image-001.jpg",
+  "tags": [
+    "personal",
+    "fujifilm",
+    "x100f",
+    "xt"
+  ],
+  "status": "published",
+  "featured": true
+}

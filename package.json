@@ -1,0 +1,31 @@
+{
+  "name": "personal-homepage-astro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "tsx src/scripts/validate-content.ts",
+    "assign-images": "tsx src/scripts/assign-unsplash-images.ts",
+    "download-medium": "tsx src/scripts/download-medium.ts",
+    "import-medium": "tsx src/scripts/import-medium.ts",
+    "extract-exif": "tsx src/scripts/extract-photo-exif.ts",
+    "fix-article-links": "tsx src/scripts/fix-article-links.ts",
+    "sync-skills": "tsx src/scripts/sync-agent-skills.ts",
+    "import-wayback": "tsx src/scripts/import-wayback-wordpress.ts",
+    "build": "npm run validate && astro build",
+    "generate": "tsx src/scripts/build-docs.ts",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "exifr": "^7.1.3",
+    "marked": "^16.0.0",
+    "shiki": "^4.1.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

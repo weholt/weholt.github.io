@@ -1,0 +1,19 @@
+{
+  "id": "starting-over",
+  "order": 13,
+  "title": {
+    "en": "Starting over…",
+    "no": "Starting over…"
+  },
+  "summary": {
+    "en": "The workhorse: Fujifilm XT-3My interest in photography has been almost gone for over a year, with just a few exceptions, like our trip to Greece last summer. All my creative outlets are heavily influenced by my genera...",
+    "no": "The workhorse: Fujifilm XT-3My interest in photography has been almost gone for over a year, with just a few exceptions, like our trip to Greece last summer. All my creative outlets are heavily influenced by my genera..."
+  },
+  "date": "2023-02-09",
+  "coverImage": "/images/medium/starting-over/image-001.jpeg",
+  "tags": [
+    "medium"
+  ],
+  "status": "published",
+  "featured": false
+}

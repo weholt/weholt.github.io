@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Localize from "../components/Localize.astro";
+import TagList from "../components/TagList.astro";
+import { getSiteData } from "../lib/content";
+import { withBase } from "../lib/urls";
+const data = getSiteData();
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="About">
+  <main class="page-shell">
+    <section class="section about-header">
+      <img class="portrait" src={withBase(data.profile.portraitImage)} alt={data.profile.displayName} />
+      <div>
+        <p class="eyebrow"><Localize value={data.profile.location} /></p>
+        <h1><Localize value={data.profile.title} /></h1>
+        <p class="lead"><Localize value={data.profile.longBio} /></p>
+      </div>
+    </section>
+    <section class="section">
+      <p class="section-kicker">Expertise</p>
+      <h2><span data-lang="en">Technical focus</span><span data-lang="no">Teknisk fokus</span></h2>
+      <TagList tags={data.professional.expertise} />
+    </section>
+    <section class="section timeline">
+      <p class="section-kicker">Career</p>
+      <h2><span data-lang="en">Professional timeline</span><span data-lang="no">Profesjonell tidslinje</span></h2>
+      {data.career.map((item) => (
+        <article class="timeline-item">
+          <p class="period">{item.period}</p>
+          <h3><Localize value={item.role} /> · {item.company}</h3>
+          <p><Localize value={item.description} /></p>
+        </article>
+      ))}
+    </section>
+    <section class="section timeline">
+      <p class="section-kicker">Education</p>
+      {data.education.map((item) => (
+        <article class="timeline-item">
+          <p class="period">{item.period}</p>
+          <h3><Localize value={item.title} /> · {item.institution}</h3>
+          <p><Localize value={item.description} /></p>
+        </article>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

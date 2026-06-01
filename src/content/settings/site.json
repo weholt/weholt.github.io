@@ -1,0 +1,263 @@
+{
+  "siteName": "Weholt.Org",
+  "languages": [
+    "en",
+    "no"
+  ],
+  "defaultLanguage": "en",
+  "defaultLayout": "developer-clean",
+  "defaultTheme": "clean-light",
+  "defaultVoice": "professional",
+  "layouts": [
+    {
+      "id": "developer-clean",
+      "label": {
+        "en": "Developer Clean",
+        "no": "Utvikler ren"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "editorial",
+      "label": {
+        "en": "Editorial",
+        "no": "Redaksjonell"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "photography-first",
+      "label": {
+        "en": "Photography First",
+        "no": "Foto først"
+      },
+      "defaultVoice": "experimental"
+    }
+  ],
+  "themes": [
+    {
+      "id": "nordic-dark",
+      "label": {
+        "en": "Nordic Dark",
+        "no": "Nordisk mørk"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "clean-light",
+      "label": {
+        "en": "Clean Light",
+        "no": "Ren lys"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "photo-noir",
+      "label": {
+        "en": "Photo Noir",
+        "no": "Foto noir"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "executive-slate",
+      "label": {
+        "en": "Executive Slate",
+        "no": "Executive skifer"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "forest-moss",
+      "label": {
+        "en": "Forest Moss",
+        "no": "Skogmose"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "graphite",
+      "label": {
+        "en": "Graphite",
+        "no": "Grafitt"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "ocean-dusk",
+      "label": {
+        "en": "Ocean Dusk",
+        "no": "Havskumring"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "paper-ink",
+      "label": {
+        "en": "Paper & Ink",
+        "no": "Papir og blekk"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "solar-amber",
+      "label": {
+        "en": "Solar Amber",
+        "no": "Solamber"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "studio-sidebar",
+      "label": {
+        "en": "Studio Sidebar",
+        "no": "Studio sidebar"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "broadsheet",
+      "label": {
+        "en": "Broadsheet",
+        "no": "Avislayout"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "precision-grid",
+      "label": {
+        "en": "Precision Grid",
+        "no": "Presisjonsrutenett"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "corporate-light",
+      "label": {
+        "en": "Corporate Light",
+        "no": "Corporate lys"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "documentation",
+      "label": {
+        "en": "Documentation",
+        "no": "Dokumentasjon"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "alpine-gallery",
+      "label": {
+        "en": "Alpine Gallery",
+        "no": "Alpint galleri"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "golden-hour",
+      "label": {
+        "en": "Golden Hour",
+        "no": "Gyllen time"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "urban-frame",
+      "label": {
+        "en": "Urban Frame",
+        "no": "Urban ramme"
+      },
+      "defaultVoice": "experimental"
+    },
+    {
+      "id": "darkroom-print",
+      "label": {
+        "en": "Darkroom Print",
+        "no": "Mørkerom"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "lightbox-frost",
+      "label": {
+        "en": "Lightbox Frost",
+        "no": "Lysboks frost"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "portfolio-split",
+      "label": {
+        "en": "Portfolio Split",
+        "no": "Portfolio delt"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "aurora-night",
+      "label": {
+        "en": "Aurora Night",
+        "no": "Nordlys natt"
+      },
+      "defaultVoice": "experimental"
+    },
+    {
+      "id": "terracotta-atelier",
+      "label": {
+        "en": "Terracotta Atelier",
+        "no": "Terrakotta atelier"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "lavender-fog",
+      "label": {
+        "en": "Lavender Fog",
+        "no": "Lavendeltåke"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "neon-circuit",
+      "label": {
+        "en": "Neon Circuit",
+        "no": "Neon krets"
+      },
+      "defaultVoice": "experimental"
+    },
+    {
+      "id": "mint-console",
+      "label": {
+        "en": "Mint Console",
+        "no": "Mint konsoll"
+      },
+      "defaultVoice": "professional"
+    },
+    {
+      "id": "copper-patina",
+      "label": {
+        "en": "Copper Patina",
+        "no": "Kobberpatina"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "cherry-blossom",
+      "label": {
+        "en": "Cherry Blossom",
+        "no": "Kirsebærblomst"
+      },
+      "defaultVoice": "personal"
+    },
+    {
+      "id": "signal-noir",
+      "label": {
+        "en": "Signal Noir",
+        "no": "Signal noir"
+      },
+      "defaultVoice": "experimental"
+    }
+  ]
+}

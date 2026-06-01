@@ -1,0 +1,20 @@
+{
+  "title": "Upgrading PostgreSQL in a docker deployment",
+  "slug": "upgrading-postgresql-in-a-docker-deployment-7e0a1f3667e6",
+  "postId": "7e0a1f3667e6",
+  "url": "https://weholt.medium.com/upgrading-postgresql-in-a-docker-deployment-7e0a1f3667e6",
+  "guid": "https://medium.com/p/7e0a1f3667e6",
+  "pubDate": "Tue, 28 Feb 2023 14:01:43 GMT",
+  "updated": "2023-02-28T14:02:31.425Z",
+  "creator": "Thomas Weholt",
+  "categories": [
+    "docker-compose",
+    "upgrade",
+    "postgresql",
+    "python",
+    "docker"
+  ],
+  "imageCount": 1,
+  "failedImageCount": 0,
+  "failedImages": []
+}

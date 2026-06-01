@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getSiteData } from "../lib/content";
+const data = getSiteData();
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="Not found">
+  <main class="page-shell">
+    <section class="section">
+      <h1>404</h1>
+      <p class="lead"><span data-lang="en">The page was not found.</span><span data-lang="no">Siden ble ikke funnet.</span></p>
+    </section>
+  </main>
+</BaseLayout>

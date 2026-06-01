@@ -1,0 +1,1 @@
+I’d like to see an article on deploying a pythonapp to a remote dockermachine. That’s truly rapid deployment, but I’m having a hard time getting the hang of it, using dockermachine that is. Anyhow — great article!

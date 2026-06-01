@@ -1,0 +1,23 @@
+{
+  "id": "tromso-august-2021",
+  "order": 16,
+  "title": {
+    "en": "Tromsø in August of 2021",
+    "no": "Tromsø in August of 2021"
+  },
+  "summary": {
+    "en": "This is a short story about our vacation in Tromsø, Norway — in the summer of 2021.",
+    "no": "This is a short story about our vacation in Tromsø, Norway — in the summer of 2021."
+  },
+  "date": "2021-08-13",
+  "coverImage": "/images/medium/tromso-august-2021/image-001.jpg",
+  "tags": [
+    "travel",
+    "fujifilm",
+    "norway",
+    "tromsø",
+    "landscape"
+  ],
+  "status": "published",
+  "featured": true
+}

@@ -1,0 +1,38 @@
+---
+type Props = { lang: "en" | "no" };
+const { lang } = Astro.props;
+---
+<div class="lang-switch" role="group" aria-label="Language">
+  <button
+    type="button"
+    class="lang-flag"
+    data-control="lang"
+    data-value="en"
+    aria-label="English"
+    aria-pressed={lang === "en"}
+  >
+    <svg class="lang-flag__icon" viewBox="0 0 22 16" aria-hidden="true">
+      <rect width="22" height="16" fill="#012169" />
+      <path d="M0 0l22 16M22 0L0 16" stroke="#fff" stroke-width="2.5" />
+      <path d="M0 0l22 16M22 0L0 16" stroke="#C8102E" stroke-width="1.2" />
+      <path d="M11 0v16M0 8h22" stroke="#fff" stroke-width="4" />
+      <path d="M11 0v16M0 8h22" stroke="#C8102E" stroke-width="2.2" />
+    </svg>
+  </button>
+  <button
+    type="button"
+    class="lang-flag"
+    data-control="lang"
+    data-value="no"
+    aria-label="Norsk"
+    aria-pressed={lang === "no"}
+  >
+    <svg class="lang-flag__icon" viewBox="0 0 22 16" aria-hidden="true">
+      <rect width="22" height="16" fill="#BA0C2F" />
+      <rect x="6" width="4" height="16" fill="#fff" />
+      <rect y="6" width="22" height="4" fill="#fff" />
+      <rect x="7" width="2" height="16" fill="#00205B" />
+      <rect y="7" width="22" height="2" fill="#00205B" />
+    </svg>
+  </button>
+</div>

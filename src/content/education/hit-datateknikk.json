@@ -1,0 +1,14 @@
+{
+  "id": "hit-datateknikk",
+  "order": 0,
+  "period": "1997–1999",
+  "institution": "Høgskolen i Telemark",
+  "title": {
+    "en": "Computer Engineering",
+    "no": "Datateknikk, ingeniør"
+  },
+  "description": {
+    "en": "Higher education in computer engineering.",
+    "no": "Høyere utdanning innen datateknikk."
+  }
+}

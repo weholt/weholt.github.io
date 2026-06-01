@@ -1,0 +1,19 @@
+{
+  "id": "cintra",
+  "order": 2,
+  "period": "2000–2001",
+  "role": {
+    "en": "System Developer",
+    "no": "Systemutvikler"
+  },
+  "company": "Cintra Software Engineering AS",
+  "location": {
+    "en": "Porsgrunn, Norway",
+    "no": "Porsgrunn, Norge"
+  },
+  "description": {
+    "en": "Software development using Delphi and Java.",
+    "no": "Systemutvikling med Delphi og Java."
+  },
+  "highlights": []
+}

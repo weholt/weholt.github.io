@@ -1,0 +1,3 @@
+# I’d like to see an article on deploying a python-app to a remote docker-machine.
+
+I’d like to see an article on deploying a python-app to a remote docker-machine. That’s truly rapid deployment, but I’m having a hard time getting the hang of it, using docker-machine that is. Anyhow — great article!

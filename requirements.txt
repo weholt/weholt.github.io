@@ -1,7 +1,0 @@
-mkdocs-material[imaging]
-mkdocstrings-python
-mkautodoc
-mkdocs-coverage
-mkdocs-rss-plugin
-invoke
-pyyaml
