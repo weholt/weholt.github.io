@@ -68,12 +68,9 @@ const isDev = import.meta.env.DEV;
               data-control="nav-toggle"
               aria-expanded="false"
               aria-controls="site-nav"
+              aria-label="Menu"
             >
               <span class="nav-toggle__bars" aria-hidden="true"></span>
-              <span class="sr-only">
-                <span data-lang="en">Menu</span>
-                <span data-lang="no">Meny</span>
-              </span>
             </button>
             <div class="site-controls">
               <LangFlags lang={settings.defaultLanguage} />
@@ -154,6 +151,7 @@ const isDev = import.meta.env.DEV;
           button.setAttribute("aria-pressed", button.dataset.value === lang ? "true" : "false");
         });
         updateThemeIndicator(theme);
+        document.querySelector("[data-control='nav-toggle']")?.setAttribute("aria-label", lang === "no" ? "Meny" : "Menu");
       }
       apply(initial);
       document.querySelectorAll("[data-control='lang']").forEach((button) => {
