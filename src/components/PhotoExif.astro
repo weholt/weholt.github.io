@@ -1,0 +1,14 @@
+---
+import type { PhotoExif } from "../schemas/content";
+import { exifItems } from "../lib/exif";
+
+type Props = { exif?: PhotoExif };
+
+const { exif } = Astro.props;
+const items = exif ? exifItems(exif) : [];
+---
+{items.length > 0 && (
+  <p class="photo-exif" aria-label="Camera settings">
+    {items.map((item) => <span class="photo-exif-item">{item}</span>)}
+  </p>
+)}

@@ -1,0 +1,23 @@
+{
+  "id": "lofoten-visma-2022",
+  "order": 12,
+  "title": {
+    "en": "Lofoten with Visma 2022",
+    "no": "Lofoten with Visma 2022"
+  },
+  "summary": {
+    "en": "Here are some photos from our trip to Lofoten with my employer Visma in the spring of 2022.",
+    "no": "Here are some photos from our trip to Lofoten with my employer Visma in the spring of 2022."
+  },
+  "date": "2023-02-09",
+  "coverImage": "/images/medium/lofoten-visma-2022/image-001.jpg",
+  "tags": [
+    "lofoten",
+    "norway",
+    "fujifilm",
+    "landscape",
+    "sea-eagle"
+  ],
+  "status": "published",
+  "featured": true
+}

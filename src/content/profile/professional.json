@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "en": "Senior system developer with long experience in enterprise software, Workforce Management systems, backend development, databases, Python, open source and AI-assisted development workflows.",
+    "no": "Senior systemutvikler med lang erfaring fra enterprise-programvare, Workforce Management-systemer, backend-utvikling, databaser, Python, åpen kildekode og AI-støttede utviklingsflyter."
+  },
+  "expertise": [
+    "AI-assisted development",
+    "Agentic development workflows",
+    "Backend development",
+    "Enterprise systems",
+    "Workforce Management systems",
+    "C#",
+    "Microsoft SQL Server",
+    "Python",
+    "Django",
+    "Wagtail",
+    "FastAPI",
+    "Docker",
+    "Linux",
+    "Open source",
+    "HTMX",
+    "JavaScript",
+    "React",
+    "Testing and automation",
+    "Web scraping",
+    "Developer tooling"
+  ],
+  "opportunities": {
+    "headline": {
+      "en": "What I would like to work on",
+      "no": "Hva jeg gjerne vil jobbe med"
+    },
+    "summary": {
+      "en": "I am not selling consulting services here. This site is meant to attract potential employers and collaborators by showing how I think, what I build, and what kind of problems I care about.",
+      "no": "Jeg selger ikke konsulenttjenester her. Nettstedet er ment å tiltrekke potensielle arbeidsgivere og samarbeidspartnere ved å vise hvordan jeg tenker, hva jeg bygger og hvilke problemer jeg bryr meg om."
+    },
+    "targets": [
+      {
+        "id": "ai-assisted-development",
+        "title": {
+          "en": "AI-assisted software development",
+          "no": "AI-støttet programvareutvikling"
+        },
+        "description": {
+          "en": "Practical use of AI tools, agents and automation to improve planning, development, testing, review and developer workflows.",
+          "no": "Praktisk bruk av AI-verktøy, agenter og automatisering for å forbedre planlegging, utvikling, testing, review og utviklerflyt."
+        },
+        "tags": [
+          "AI",
+          "agents",
+          "developer tooling",
+          "automation"
+        ]
+      },
+      {
+        "id": "backend-enterprise",
+        "title": {
+          "en": "Backend and enterprise systems",
+          "no": "Backend og enterprise-systemer"
+        },
+        "description": {
+          "en": "Long-lived systems, databases, APIs, business-critical logic and modernization of complex software.",
+          "no": "Langlivede systemer, databaser, API-er, forretningskritisk logikk og modernisering av kompleks programvare."
+        },
+        "tags": [
+          "backend",
+          "enterprise",
+          "databases",
+          "APIs"
+        ]
+      },
+      {
+        "id": "python-open-source",
+        "title": {
+          "en": "Python, open source and developer tools",
+          "no": "Python, åpen kildekode og utviklerverktøy"
+        },
+        "description": {
+          "en": "Tools, prototypes, packages and systems built around Python, Linux, automation and practical software craftsmanship.",
+          "no": "Verktøy, prototyper, pakker og systemer bygget rundt Python, Linux, automatisering og praktisk programvarehåndverk."
+        },
+        "tags": [
+          "Python",
+          "Linux",
+          "open source",
+          "tools"
+        ]
+      }
+    ]
+  }
+}

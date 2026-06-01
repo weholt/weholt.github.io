@@ -1,0 +1,19 @@
+{
+  "id": "bibliotek-systemer",
+  "order": 3,
+  "period": "1999–2000",
+  "role": {
+    "en": "Service Technician",
+    "no": "Servicetekniker"
+  },
+  "company": "Bibliotek Systemer",
+  "location": {
+    "en": "Larvik, Norway",
+    "no": "Larvik, Norge"
+  },
+  "description": {
+    "en": "PC building, printer service and technical support.",
+    "no": "PC-bygging, skriverservice og teknisk support."
+  },
+  "highlights": []
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getSiteData } from "../../lib/content";
+import { getTagIndex } from "../../lib/tags";
+import { withBase } from "../../lib/urls";
+
+const data = getSiteData();
+const tags = getTagIndex();
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="Tags">
+  <main class="page-shell">
+    <section class="section tag-index-section">
+      <p class="section-kicker">Topics</p>
+      <h1><span data-lang="en">Browse by tag</span><span data-lang="no">Bla etter emne</span></h1>
+      <p class="lead">
+        <span data-lang="en">Articles and projects grouped by topic.</span>
+        <span data-lang="no">Artikler og prosjekter gruppert etter emne.</span>
+      </p>
+      {tags.length === 0 ? (
+        <p><span data-lang="en">No tags yet.</span><span data-lang="no">Ingen emner ennå.</span></p>
+      ) : (
+        <ul class="tag-index tag-list">
+          {tags.map((tag) => (
+            <li class="tag-list__item">
+              <a class="tag-link" href={withBase(`/tags/${tag.slug}/`)}>
+                <span class="tag-link__hash" aria-hidden="true">#</span>
+                <span class="tag-link__label">{tag.label}</span>
+                <span class="tag-index__count">{tag.count}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  </main>
+</BaseLayout>

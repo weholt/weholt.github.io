@@ -1,0 +1,88 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: profile
+    label: Profile
+    type: file
+    path: src/content/profile/main.json
+    format: json
+    fields:
+      - name: name
+        label: Full name
+        type: string
+      - name: displayName
+        label: Display name
+        type: string
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: no, label: Norwegian, type: string }
+      - name: portraitImage
+        label: Portrait image
+        type: image
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: no, label: Norwegian, type: string }
+      - name: summary
+        label: Summary
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: no, label: Norwegian, type: text }
+      - name: status
+        label: Status
+        type: select
+        options: [featured, active, experimental, historical, archived, draft]
+      - name: featured
+        label: Featured
+        type: boolean
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+
+  - name: articles
+    label: Articles
+    type: collection
+    path: src/content/articles/*/index.json
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: no, label: Norwegian, type: string }
+      - name: summary
+        label: Summary
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: no, label: Norwegian, type: text }
+      - name: date
+        label: Date
+        type: date
+      - name: status
+        label: Status
+        type: select
+        options: [draft, published, archived]

@@ -1,0 +1,27 @@
+{
+  "id": "serpentarium-core",
+  "order": 0,
+  "title": {
+    "en": "Serpentarium Core",
+    "no": "Serpentarium Core"
+  },
+  "summary": {
+    "en": "A Python service container using typing Protocols and type hints to resolve construction requirements for services.",
+    "no": "En Python-basert service container som bruker typing Protocols og type hints for å løse avhengigheter mellom tjenester."
+  },
+  "description": {
+    "en": "A small Python project exploring dependency resolution, service containers and typed interfaces.",
+    "no": "Et lite Python-prosjekt som utforsker dependency resolution, service containers og typede grensesnitt."
+  },
+  "repo": "serpentarium-core",
+  "url": "https://github.com/weholt/serpentarium-core",
+  "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200&h=750",
+  "status": "featured",
+  "featured": true,
+  "tags": [
+    "Python",
+    "typing",
+    "architecture",
+    "developer tooling"
+  ]
+}

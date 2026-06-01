@@ -1,0 +1,23 @@
+{
+  "id": "optyx-faster-culling",
+  "order": 15,
+  "title": {
+    "en": "Optyx : faster culling with fancy AI?",
+    "no": "Optyx : faster culling with fancy AI?"
+  },
+  "summary": {
+    "en": "I do all my culling and post-processing in Capture One Pro 21. Or, at least, I want to, but a few missing features in Capture One makes me look into other software solutions to speed up my culling process. The idea is...",
+    "no": "I do all my culling and post-processing in Capture One Pro 21. Or, at least, I want to, but a few missing features in Capture One makes me look into other software solutions to speed up my culling process. The idea is..."
+  },
+  "date": "2021-08-23",
+  "coverImage": "/images/medium/optyx-faster-culling/image-001.png",
+  "tags": [
+    "optyx",
+    "photography",
+    "python",
+    "capture-one",
+    "culling"
+  ],
+  "status": "published",
+  "featured": false
+}

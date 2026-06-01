@@ -1,0 +1,3 @@
+# How can you say it's almost dead?
+
+How can you say it's almost dead? According to this [https://octoverse.github.com/2022/top-programming-languages](https://octoverse.github.com/2022/top-programming-languages) it's getting MORE popular, not less.

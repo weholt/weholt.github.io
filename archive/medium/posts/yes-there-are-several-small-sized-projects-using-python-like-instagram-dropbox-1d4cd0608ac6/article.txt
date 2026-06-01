@@ -1,0 +1,1 @@
+Yes, there are several small sized projects using Python, like Instagram & Dropbox ;). Look at https://realpython.com/worldclasscompaniesusingpython/ for reference. Python has its limitations, but what is your actual goal with this article?

@@ -1,0 +1,56 @@
+{
+  "eyebrow": {
+    "en": "Personal portfolio / code / photography / writing",
+    "no": "Personlig portefølje / kode / fotografi / tekster"
+  },
+  "headline": {
+    "professional": {
+      "en": "Senior software developer building practical systems, tools and AI-assisted workflows.",
+      "no": "Seniorutvikler som bygger praktiske systemer, verktøy og AI-støttede arbeidsflyter."
+    },
+    "personal": {
+      "en": "I build software, write about technology, take photographs and keep returning to Python.",
+      "no": "Jeg bygger programvare, skriver om teknologi, tar bilder og vender stadig tilbake til Python."
+    },
+    "playful": {
+      "en": "Python, cameras, agents, Linux boxes and the occasional questionable side project.",
+      "no": "Python, kameraer, agenter, Linux-bokser og et og annet tvilsomt sideprosjekt."
+    },
+    "experimental": {
+      "en": "A personal lab for code, images, essays, tools and half-controlled software experiments.",
+      "no": "Et personlig laboratorium for kode, bilder, essays, verktøy og halvkontrollerte programvareeksperimenter."
+    }
+  },
+  "subheadline": {
+    "professional": {
+      "en": "This site is meant to show how I think, what I build, what I care about, and what kind of work I would like to do more of.",
+      "no": "Dette nettstedet skal vise hvordan jeg tenker, hva jeg bygger, hva jeg bryr meg om, og hva slags arbeid jeg gjerne vil gjøre mer av."
+    },
+    "personal": {
+      "en": "A portfolio, archive and notebook for development work, open-source projects, photography and essays.",
+      "no": "En portefølje, et arkiv og en notatbok for utviklingsarbeid, open-source-prosjekter, fotografi og essays."
+    },
+    "playful": {
+      "en": "Somewhere between a résumé, a lab notebook, a photo wall and a pile of useful experiments.",
+      "no": "Et sted mellom en CV, en laboratorienotatbok, en fotovegg og en haug med nyttige eksperimenter."
+    },
+    "experimental": {
+      "en": "The layout may change. The content should survive. The code should stay honest.",
+      "no": "Layouten kan endre seg. Innholdet skal overleve. Koden skal være ærlig."
+    }
+  },
+  "primaryCta": {
+    "label": {
+      "en": "View projects",
+      "no": "Se prosjekter"
+    },
+    "href": "/projects/"
+  },
+  "secondaryCta": {
+    "label": {
+      "en": "Read articles",
+      "no": "Les tekster"
+    },
+    "href": "/writing/"
+  }
+}

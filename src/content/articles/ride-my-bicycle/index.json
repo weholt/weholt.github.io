@@ -1,0 +1,22 @@
+{
+  "id": "ride-my-bicycle",
+  "order": 26,
+  "title": {
+    "en": "I want to ride my bicycle, I want to ride my bike",
+    "no": "I want to ride my bicycle, I want to ride my bike"
+  },
+  "summary": {
+    "en": "I want to ride my bicycle, I want to ride my bike",
+    "no": "I want to ride my bicycle, I want to ride my bike"
+  },
+  "date": "2020-06-11",
+  "coverImage": "/images/medium/ride-my-bicycle/image-001.jpg",
+  "tags": [
+    "fujifilm",
+    "sunset",
+    "bikes",
+    "bicycles"
+  ],
+  "status": "published",
+  "featured": false
+}

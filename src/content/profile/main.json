@@ -1,0 +1,42 @@
+{
+  "name": "Thomas Augestad Weholt",
+  "displayName": "Thomas Weholt",
+  "location": {
+    "en": "Norway",
+    "no": "Norge"
+  },
+  "title": {
+    "en": "Senior Software Developer",
+    "no": "Senior systemutvikler"
+  },
+  "tagline": {
+    "en": "Developer, Python enthusiast, open-source advocate, photographer and builder of AI-assisted software workflows.",
+    "no": "Utvikler, Python-entusiast, tilhenger av åpen kildekode, fotograf og bygger av AI-støttede utviklingsflyter."
+  },
+  "shortBio": {
+    "en": "Senior software developer from Norway with more than 25 years of experience, focused on backend systems, Python, open source, Linux, AI-assisted development workflows and practical automation.",
+    "no": "Senior systemutvikler fra Norge med mer enn 25 års erfaring, med fokus på backend-systemer, Python, åpen kildekode, Linux, AI-støttede utviklingsflyter og praktisk automatisering."
+  },
+  "mediumBio": {
+    "en": "I am a senior software developer based in Norway with more than 25 years of experience in technology and software development. Professionally, I have spent most of my career building and maintaining complex Workforce Management systems, with a strong focus on backend development, databases, enterprise systems and long-lived software. Outside work, I build tools, experiments and open-source projects around Python, Django, Wagtail, FastAPI, Linux, automation and AI-assisted development.",
+    "no": "Jeg er en senior systemutvikler fra Norge med mer enn 25 års erfaring fra teknologi og programvareutvikling. Profesjonelt har jeg brukt mesteparten av karrieren på å bygge og vedlikeholde komplekse Workforce Management-systemer, med sterkt fokus på backend-utvikling, databaser, enterprise-systemer og langlivede løsninger. Utenfor jobb bygger jeg verktøy, eksperimenter og open-source-prosjekter rundt Python, Django, Wagtail, FastAPI, Linux, automatisering og AI-støttet utvikling."
+  },
+  "longBio": {
+    "en": "I am Thomas Augestad Weholt, a senior software developer from Norway. I started programming in the 1990s and have worked professionally in technology since 1999, and as a developer since 2000. My professional background is rooted in long-lived enterprise software, especially Workforce Management systems. I have worked for many years with backend development, databases, business-critical on-premise systems, C#, Microsoft SQL Server and complex product development. Privately, my technical center of gravity has always been Python, Linux and free software. This site is both a professional portfolio and a personal lab. It collects my development work, open-source projects, writing, photography and ideas about software, automation, AI-assisted development and practical computing.",
+    "no": "Jeg er Thomas Augestad Weholt, senior systemutvikler fra Norge. Jeg begynte å programmere på 1990-tallet og har jobbet profesjonelt med teknologi siden 1999, og som utvikler siden 2000. Den profesjonelle bakgrunnen min er forankret i langlivede enterprise-systemer, spesielt Workforce Management. Jeg har jobbet i mange år med backend-utvikling, databaser, forretningskritiske on-premise-systemer, C#, Microsoft SQL Server og kompleks produktutvikling. Privat har det tekniske tyngdepunktet mitt alltid vært Python, Linux og fri programvare. Dette nettstedet er både en profesjonell portefølje og et personlig laboratorium. Det samler utviklingsarbeid, open-source-prosjekter, tekster, fotografi og ideer om programvare, automatisering, AI-støttet utvikling og praktisk databehandling."
+  },
+  "portraitImage": "/images/profile/thomas.jpg",
+  "contact": {
+    "email": "thomas@weholt.org"
+  },
+  "socialLinks": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/weholt"
+    },
+    {
+      "label": "Website",
+      "url": "https://weholt.github.io"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+---
+import Localize from "./Localize.astro";
+import PhotoExif from "./PhotoExif.astro";
+import TagList from "./TagList.astro";
+import { articleIdFromPhotoId } from "../lib/photos";
+import { getPhotoCategoryLabels } from "../lib/tags";
+import { withBase } from "../lib/urls";
+import type { Photo } from "../schemas/content";
+
+type Props = { photos: Photo[]; limit?: number; showTags?: boolean };
+const { photos, limit, showTags = false } = Astro.props;
+const visible = typeof limit === "number" ? photos.slice(0, limit) : photos;
+const categoryLabels = getPhotoCategoryLabels();
+---
+<div class="photo-grid">
+  {visible.map((photo) => {
+    const articleId = articleIdFromPhotoId(photo.id);
+    const href = articleId ? withBase(`/articles/${articleId}/`) : undefined;
+    const photoTags = [...new Set([...photo.categories, ...photo.tags])];
+
+    const card = (
+      <figure class="photo-card">
+        <img src={withBase(photo.src)} alt={photo.alt.en} loading="lazy" />
+        <figcaption>
+          {photo.title && <strong><Localize value={photo.title} /></strong>}
+          {photo.caption && <span><Localize value={photo.caption} /></span>}
+          {showTags && photoTags.length > 0 && (
+            <div class="photo-card__tags">
+              <TagList tags={photoTags} labels={categoryLabels} />
+            </div>
+          )}
+          <PhotoExif exif={photo.exif} />
+        </figcaption>
+      </figure>
+    );
+
+    return href ? (
+      <a class="photo-card-link" href={href}>
+        {card}
+      </a>
+    ) : card;
+  })}
+</div>

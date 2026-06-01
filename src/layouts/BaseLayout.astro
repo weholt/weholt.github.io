@@ -1,0 +1,154 @@
+---
+import LangFlags from "../components/LangFlags.astro";
+import { withBase } from "../lib/urls";
+import type { Profile, Settings } from "../schemas/content";
+
+type Props = {
+  title?: string;
+  description?: string;
+  profile: Profile;
+  settings: Settings;
+};
+
+const { title, description, profile, settings } = Astro.props;
+const pageTitle = title ? `${title} · ${settings.siteName}` : settings.siteName;
+const pageDescription = description || profile.shortBio.en;
+const nav = [
+  { href: "/", en: "Home", no: "Hjem" },
+  { href: "/about/", en: "About", no: "Om" },
+  { href: "/projects/", en: "Projects", no: "Prosjekter" },
+  { href: "/writing/", en: "Writing", no: "Tekster" },
+  { href: "/photography/", en: "Photography", no: "Foto" }
+];
+const normalizePath = (path: string) => {
+  const trimmed = path.replace(/\/+$/, "") || "/";
+  return trimmed;
+};
+const currentPath = normalizePath(Astro.url.pathname);
+const isNavActive = (href: string) => {
+  const target = normalizePath(withBase(href));
+  if (target === normalizePath(withBase("/"))) return currentPath === target;
+  return currentPath === target || currentPath.startsWith(`${target}/`);
+};
+const defaultThemeMeta = settings.themes.find((theme) => theme.id === settings.defaultTheme) ?? settings.themes[0];
+const themeLabels = Object.fromEntries(settings.themes.map((theme) => [theme.id, theme.label]));
+const isDev = import.meta.env.DEV;
+---
+<!doctype html>
+<html lang="en" data-lang={settings.defaultLanguage} data-theme={settings.defaultTheme} data-layout={settings.defaultLayout} data-voice={settings.defaultVoice}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={withBase(profile.portraitImage)} />
+    <link rel="icon" href={withBase("/favicon.svg")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href={withBase("/styles/global.css")} />
+    <link rel="stylesheet" href={withBase("/styles/variant-themes.css")} />
+    <link rel="stylesheet" href={withBase("/styles/photo-themes.css")} />
+    <link rel="stylesheet" href={withBase("/styles/accent-themes.css")} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href={withBase("/")}>
+          <span class="brand__name">{settings.siteName.replace(/\.Org$/i, "")}</span><span class="brand__tld">.Org</span>
+        </a>
+        <nav class="main-nav" aria-label="Primary navigation">
+          {nav.map((item) => (
+            <a href={withBase(item.href)} aria-current={isNavActive(item.href) ? "page" : undefined}>
+              <span data-lang="en">{item.en}</span>
+              <span data-lang="no">{item.no}</span>
+            </a>
+          ))}
+        </nav>
+        <div class="site-controls">
+          <LangFlags lang={settings.defaultLanguage} />
+          <div class="shuffle-group">
+            {isDev && defaultThemeMeta && (
+              <span class="dev-theme-label" data-theme-indicator aria-live="polite">
+                <span data-lang="en">{defaultThemeMeta.label.en}</span>
+                <span data-lang="no">{defaultThemeMeta.label.no}</span>
+              </span>
+            )}
+            <button type="button" class="shuffle-btn" data-control="shuffle">
+              <span data-lang="en">Shuffle</span>
+              <span data-lang="no">Bytt</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} {profile.displayName}</p>
+      <p><a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a></p>
+    </footer>
+    <script is:inline define:vars={{ settings, themeLabels, showThemeIndicator: isDev }}>
+      const root = document.documentElement;
+      const storageKey = "personal-homepage-preferences-v3";
+      const themeIndicator = showThemeIndicator ? document.querySelector("[data-theme-indicator]") : null;
+      const safeParse = (value) => {
+        try { return value ? JSON.parse(value) : {}; } catch { return {}; }
+      };
+      const layouts = settings.layouts.map((layout) => layout.id);
+      const themes = settings.themes.map((theme) => theme.id);
+      const layoutVoices = Object.fromEntries(settings.layouts.map((layout) => [layout.id, layout.defaultVoice]));
+      const themeVoices = Object.fromEntries(settings.themes.map((theme) => [theme.id, theme.defaultVoice || null]));
+      const params = new URLSearchParams(window.location.search);
+      const randomFrom = (items) => items[Math.floor(Math.random() * items.length)];
+      const stored = safeParse(localStorage.getItem(storageKey));
+      const initial = {
+        lang: params.get("lang") || stored.lang || settings.defaultLanguage,
+        layout: params.get("layout") || stored.layout || settings.defaultLayout,
+        theme: params.get("theme") || stored.theme || settings.defaultTheme,
+        voice: params.get("voice") || stored.voice || null
+      };
+      function updateThemeIndicator(themeId) {
+        if (!themeIndicator) return;
+        const labels = themeLabels[themeId];
+        if (!labels) {
+          themeIndicator.textContent = themeId;
+          return;
+        }
+        const en = themeIndicator.querySelector('[data-lang="en"]');
+        const no = themeIndicator.querySelector('[data-lang="no"]');
+        if (en) en.textContent = labels.en;
+        if (no) no.textContent = labels.no;
+      }
+      function apply(next) {
+        const layout = layouts.includes(next.layout) ? next.layout : settings.defaultLayout;
+        const theme = themes.includes(next.theme) ? next.theme : settings.defaultTheme;
+        const voice = next.voice || themeVoices[theme] || layoutVoices[layout] || settings.defaultVoice;
+        const lang = ["en", "no"].includes(next.lang) ? next.lang : settings.defaultLanguage;
+        root.dataset.lang = lang;
+        root.dataset.layout = layout;
+        root.dataset.theme = theme;
+        root.dataset.voice = voice;
+        root.lang = lang;
+        localStorage.setItem(storageKey, JSON.stringify({ lang, layout, theme, voice }));
+        document.querySelectorAll("[data-control='lang']").forEach((button) => {
+          button.setAttribute("aria-pressed", button.dataset.value === lang ? "true" : "false");
+        });
+        updateThemeIndicator(theme);
+      }
+      apply(initial);
+      document.querySelectorAll("[data-control='lang']").forEach((button) => {
+        button.addEventListener("click", () => apply({ ...safeParse(localStorage.getItem(storageKey)), lang: button.dataset.value }));
+      });
+      document.querySelector("[data-control='shuffle']")?.addEventListener("click", () => {
+        apply({
+          ...safeParse(localStorage.getItem(storageKey)),
+          layout: randomFrom(layouts),
+          theme: randomFrom(themes),
+          voice: null
+        });
+      });
+    </script>
+  </body>
+</html>

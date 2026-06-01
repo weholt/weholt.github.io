@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getSiteData } from "../lib/content";
+const data = getSiteData();
+const projects = data.projects;
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="Projects">
+  <main class="page-shell">
+    <section class="section">
+      <p class="section-kicker">Projects</p>
+      <h1><span data-lang="en">Projects, experiments and archive</span><span data-lang="no">Prosjekter, eksperimenter og arkiv</span></h1>
+      <p class="lead"><span data-lang="en">A structured project model with support for featured, active, experimental, historical and archived work.</span><span data-lang="no">En strukturert prosjektmodell med støtte for utvalgte, aktive, eksperimentelle, historiske og arkiverte prosjekter.</span></p>
+      <div class="card-grid">{projects.map((project) => <ProjectCard project={project} />)}</div>
+    </section>
+  </main>
+</BaseLayout>

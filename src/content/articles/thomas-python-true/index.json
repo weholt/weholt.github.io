@@ -1,0 +1,23 @@
+{
+  "id": "thomas-python-true",
+  "order": 11,
+  "title": {
+    "en": "Thomas ❤ Python == True",
+    "no": "Thomas ❤ Python == True"
+  },
+  "summary": {
+    "en": "Some people do sudoku, and others do crossword puzzles, some even knit to pass the time. I write code in python as a hobby. I also code at work, but that’s in C#, another programming language, which is an ok language,...",
+    "no": "Some people do sudoku, and others do crossword puzzles, some even knit to pass the time. I write code in python as a hobby. I also code at work, but that’s in C#, another programming language, which is an ok language,..."
+  },
+  "date": "2023-02-21",
+  "coverImage": "/images/medium/thomas-python-true/image-001.png",
+  "tags": [
+    "sms",
+    "open-graph",
+    "django",
+    "python",
+    "open-source"
+  ],
+  "status": "published",
+  "featured": true
+}

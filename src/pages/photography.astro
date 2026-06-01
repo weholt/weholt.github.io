@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import GalleryCard from "../components/GalleryCard.astro";
+import TagList from "../components/TagList.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
+import { getSiteData } from "../lib/content";
+import { NON_PHOTOGRAPHY_ARTICLE_IDS } from "../lib/photos";
+import { getPhotoCategoryLabels } from "../lib/tags";
+
+const data = getSiteData();
+const galleryIds = new Set(data.galleries.map((gallery) => gallery.id));
+const photoArticles = data.articles.filter(
+  (article) =>
+    article.status === "published" &&
+    !NON_PHOTOGRAPHY_ARTICLE_IDS.has(article.id) &&
+    !galleryIds.has(article.id)
+);
+const categoryLabels = getPhotoCategoryLabels();
+const featuredPhotos = data.photos.slice(0, 12);
+---
+<BaseLayout profile={data.profile} settings={data.settings} title="Photography">
+  <main class="page-shell">
+    <section class="section">
+      <p class="section-kicker">Photography</p>
+      <h1><span data-lang="en">Fujifilm, portraits, travel, street and landscape</span><span data-lang="no">Fujifilm, portretter, reise, gatefoto og landskap</span></h1>
+      <p class="lead"><span data-lang="en">Travel, landscape and Fujifilm work imported from Medium and my personal archive.</span><span data-lang="no">Reise-, landskaps- og Fujifilm-bilder importert fra Medium og mitt personlige arkiv.</span></p>
+      <div class="category-row">
+        <TagList tags={data.photoCategories.map((category) => category.id)} labels={categoryLabels} />
+      </div>
+    </section>
+
+    {data.galleries.length > 0 && (
+      <section class="section">
+        <p class="section-kicker">Galleries</p>
+        <h2><span data-lang="en">Photo albums</span><span data-lang="no">Fotoalbum</span></h2>
+        <div class="card-grid">{data.galleries.map((gallery) => <GalleryCard gallery={gallery} />)}</div>
+      </section>
+    )}
+
+    {photoArticles.length > 0 && (
+      <section class="section">
+        <p class="section-kicker">Essays</p>
+        <h2><span data-lang="en">Photo stories and reviews</span><span data-lang="no">Fotohistorier og anmeldelser</span></h2>
+        <div class="article-list">{photoArticles.map((article) => <ArticleCard article={article} />)}</div>
+      </section>
+    )}
+
+    <section class="section">
+      <p class="section-kicker">Featured</p>
+      <h2><span data-lang="en">Selected frames</span><span data-lang="no">Utvalgte bilder</span></h2>
+      <PhotoGrid photos={featuredPhotos} />
+    </section>
+  </main>
+</BaseLayout>

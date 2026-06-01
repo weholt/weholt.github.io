@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import GalleryCard from "../../components/GalleryCard.astro";
+import PhotoGrid from "../../components/PhotoGrid.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getSiteData } from "../../lib/content";
+import {
+  getArticlesByTagSlug,
+  getGalleriesByTagSlug,
+  getLabelForTagSlug,
+  getPhotosByTagSlug,
+  getProjectsByTagSlug,
+  getAllTagSlugs
+} from "../../lib/tags";
+import { withBase } from "../../lib/urls";
+import type { Article, Gallery, Photo, Project } from "../../schemas/content";
+
+export function getStaticPaths() {
+  return getAllTagSlugs().map((slug) => ({
+    params: { slug },
+    props: {
+      label: getLabelForTagSlug(slug),
+      articles: getArticlesByTagSlug(slug),
+      projects: getProjectsByTagSlug(slug),
+      galleries: getGalleriesByTagSlug(slug),
+      photos: getPhotosByTagSlug(slug)
+    }
+  }));
+}
+
+type Props = {
+  label: string;
+  articles: Article[];
+  projects: Project[];
+  galleries: Gallery[];
+  photos: Photo[];
+};
+
+const { label, articles, projects, galleries, photos } = Astro.props;
+const data = getSiteData();
+const total = articles.length + projects.length + galleries.length + photos.length;
+const photoPreview = photos.slice(0, 24);
+---
+<BaseLayout profile={data.profile} settings={data.settings} title={label} description={`${total} items tagged “${label}”.`}>
+  <main class="page-shell">
+    <section class="section tag-detail">
+      <p class="section-kicker">
+        <a class="tag-detail__back" href={withBase("/tags/")}>
+          <span data-lang="en">Tags</span><span data-lang="no">Emner</span>
+        </a>
+      </p>
+      <h1 class="tag-detail__title">
+        <span class="tag-link__hash" aria-hidden="true">#</span>{label}
+      </h1>
+      <p class="lead tag-detail__summary">
+        <span data-lang="en">
+          {total === 0
+            ? "No items yet for this tag."
+            : `${total} ${total === 1 ? "item" : "items"} across articles, projects, galleries, and photos.`}
+        </span>
+        <span data-lang="no">
+          {total === 0
+            ? "Ingen elementer for dette emnet ennå."
+            : `${total} ${total === 1 ? "element" : "elementer"} på tvers av artikler, prosjekter, gallerier og bilder.`}
+        </span>
+      </p>
+
+      {articles.length > 0 && (
+        <div class="tag-detail__group">
+          <h2><span data-lang="en">Articles</span><span data-lang="no">Artikler</span> ({articles.length})</h2>
+          <div class="article-list">
+            {articles.map((article) => <ArticleCard article={article} />)}
+          </div>
+        </div>
+      )}
+
+      {projects.length > 0 && (
+        <div class="tag-detail__group">
+          <h2><span data-lang="en">Projects</span><span data-lang="no">Prosjekter</span> ({projects.length})</h2>
+          <div class="card-grid">
+            {projects.map((project) => <ProjectCard project={project} />)}
+          </div>
+        </div>
+      )}
+
+      {galleries.length > 0 && (
+        <div class="tag-detail__group">
+          <h2><span data-lang="en">Galleries</span><span data-lang="no">Gallerier</span> ({galleries.length})</h2>
+          <div class="card-grid">
+            {galleries.map((gallery) => <GalleryCard gallery={gallery} />)}
+          </div>
+        </div>
+      )}
+
+      {photos.length > 0 && (
+        <div class="tag-detail__group">
+          <h2>
+            <span data-lang="en">Photos</span><span data-lang="no">Bilder</span> ({photos.length})
+          </h2>
+          {photos.length > photoPreview.length && (
+            <p class="tag-detail__note">
+              <span data-lang="en">Showing {photoPreview.length} of {photos.length} photos.</span>
+              <span data-lang="no">Viser {photoPreview.length} av {photos.length} bilder.</span>
+            </p>
+          )}
+          <PhotoGrid photos={photoPreview} showTags />
+        </div>
+      )}
+    </section>
+  </main>
+</BaseLayout>

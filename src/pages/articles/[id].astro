@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Localize from "../../components/Localize.astro";
+import PhotoExif from "../../components/PhotoExif.astro";
+import TagList from "../../components/TagList.astro";
+import { getArticleBody, getArticles, getExifIndex, getSiteData } from "../../lib/content";
+import { injectExifIntoHtml } from "../../lib/exif";
+import { renderMarkdown } from "../../lib/markdown";
+import { withBase } from "../../lib/urls";
+
+export function getStaticPaths() {
+  return getArticles().map((article) => ({ params: { id: article.id }, props: { article } }));
+}
+
+const { article } = Astro.props;
+const data = getSiteData();
+const exifIndex = getExifIndex();
+const body = getArticleBody(article.id);
+const lookupExif = (src: string) => exifIndex[src.split("?")[0]!];
+const htmlEn = injectExifIntoHtml(await renderMarkdown(body.en), lookupExif);
+const htmlNo = injectExifIntoHtml(await renderMarkdown(body.no), lookupExif);
+---
+<BaseLayout profile={data.profile} settings={data.settings} title={article.title.en} description={article.summary.en}>
+  <main class="page-shell article-page">
+    <article class="section article-detail">
+      <p class="section-kicker">{article.date} · {article.status}</p>
+      <h1><Localize value={article.title} /></h1>
+      <p class="lead"><Localize value={article.summary} /></p>
+      <TagList tags={article.tags} />
+      {article.coverImage && (
+        <figure class="figure-with-exif">
+          <img class="article-cover" src={withBase(article.coverImage)} alt="" />
+          <PhotoExif exif={lookupExif(article.coverImage)} />
+        </figure>
+      )}
+      <div class="markdown" data-lang="en" set:html={htmlEn} />
+      <div class="markdown" data-lang="no" set:html={htmlNo} />
+    </article>
+  </main>
+</BaseLayout>

@@ -1,0 +1,22 @@
+{
+  "id": "malaga-summer-2019",
+  "order": 27,
+  "title": {
+    "en": "Malaga – The Summer of 2019",
+    "no": "Malaga – The Summer of 2019"
+  },
+  "summary": {
+    "en": "Photos from our vacation in Malaga in 2019, mostly shot with the Fujifilm X100s and X-T30.",
+    "no": "Photos from our vacation in Malaga in 2019, mostly shot with the Fujifilm X100s and X-T30."
+  },
+  "date": "2019-10-31",
+  "coverImage": "/images/medium/malaga-summer-2019/image-001.jpg",
+  "tags": [
+    "travel",
+    "fujifilm",
+    "malaga",
+    "street-photography"
+  ],
+  "status": "published",
+  "featured": false
+}

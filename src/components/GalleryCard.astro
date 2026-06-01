@@ -1,0 +1,25 @@
+---
+import Localize from "./Localize.astro";
+import TagList from "./TagList.astro";
+import { getPhotoCategoryLabels } from "../lib/tags";
+import { withBase } from "../lib/urls";
+import type { Gallery } from "../schemas/content";
+
+type Props = { gallery: Gallery };
+const { gallery } = Astro.props;
+const articleHref = withBase(`/articles/${gallery.id}/`);
+const categoryLabels = getPhotoCategoryLabels();
+---
+<article class="article-card gallery-card">
+  {gallery.coverImage && (
+    <a class="card-cover-link" href={articleHref} aria-label={gallery.title.en}>
+      <img src={withBase(gallery.coverImage)} alt="" loading="lazy" />
+    </a>
+  )}
+  <div class="card-body">
+    <p class="status">{gallery.images.length} <span data-lang="en">photos</span><span data-lang="no">bilder</span></p>
+    <h3><a href={articleHref}><Localize value={gallery.title} /></a></h3>
+    {gallery.description && <p><Localize value={gallery.description} /></p>}
+    <TagList tags={gallery.categories} labels={categoryLabels} />
+  </div>
+</article>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Localize from "../components/Localize.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
+import TagList from "../components/TagList.astro";
+import { getSiteData } from "../lib/content";
+import { pickVoice } from "../lib/i18n";
+import { withBase } from "../lib/urls";
+
+const data = getSiteData();
+const featuredProjects = data.projects.filter((project) => project.featured || project.status === "featured").slice(0, 3);
+const publishedArticles = data.articles.filter((article) => article.status === "published");
+const latestArticles = publishedArticles.slice(0, 4);
+const photos = data.photos.slice(0, 12);
+const headline = data.hero.headline;
+const subheadline = data.hero.subheadline;
+---
+<BaseLayout profile={data.profile} settings={data.settings}>
+  <main>
+    <section class="layout-view" data-layout-view="developer-clean">
+      <div class="hero developer-hero">
+        <div>
+          <p class="eyebrow"><Localize value={data.hero.eyebrow} /></p>
+          <h1>
+            <span data-voice="professional"><Localize value={pickVoice(headline, "professional")} /></span>
+            <span data-voice="personal"><Localize value={pickVoice(headline, "personal")} /></span>
+            <span data-voice="playful"><Localize value={pickVoice(headline, "playful")} /></span>
+            <span data-voice="experimental"><Localize value={pickVoice(headline, "experimental")} /></span>
+          </h1>
+          <p class="lead">
+            <span data-voice="professional"><Localize value={pickVoice(subheadline, "professional")} /></span>
+            <span data-voice="personal"><Localize value={pickVoice(subheadline, "personal")} /></span>
+            <span data-voice="playful"><Localize value={pickVoice(subheadline, "playful")} /></span>
+            <span data-voice="experimental"><Localize value={pickVoice(subheadline, "experimental")} /></span>
+          </p>
+          <div class="hero-actions">
+            <a class="button" href={withBase(data.hero.primaryCta.href)}><Localize value={data.hero.primaryCta.label} /></a>
+            <a class="button secondary" href={withBase(data.hero.secondaryCta.href)}><Localize value={data.hero.secondaryCta.label} /></a>
+          </div>
+        </div>
+        <img class="portrait" src={withBase(data.profile.portraitImage)} alt={data.profile.displayName} />
+      </div>
+      <section class="section split">
+        <div>
+          <p class="section-kicker">Profile</p>
+          <h2><Localize value={data.profile.title} /></h2>
+        </div>
+        <p class="large"><Localize value={data.profile.mediumBio} /></p>
+      </section>
+      <section class="section">
+        <p class="section-kicker">Expertise</p>
+        <h2><Localize value={data.professional.opportunities.headline} /></h2>
+        <p class="section-intro"><Localize value={data.professional.opportunities.summary} /></p>
+        <div class="opportunity-grid">
+          {data.professional.opportunities.targets.map((target) => (
+            <article class="text-card">
+              <h3><Localize value={target.title} /></h3>
+              <p><Localize value={target.description} /></p>
+              <TagList tags={target.tags} />
+            </article>
+          ))}
+        </div>
+      </section>
+      <section class="section">
+        <p class="section-kicker">Projects</p>
+        <h2><span data-lang="en">Featured work</span><span data-lang="no">Utvalgt arbeid</span></h2>
+        <div class="card-grid">{featuredProjects.map((project) => <ProjectCard project={project} />)}</div>
+      </section>
+    </section>
+
+    <section class="layout-view" data-layout-view="editorial">
+      <div class="editorial-hero">
+        <p class="eyebrow"><Localize value={data.hero.eyebrow} /></p>
+        <h1><Localize value={pickVoice(headline, "personal")} /></h1>
+        <p class="lead"><Localize value={data.profile.longBio} /></p>
+      </div>
+      <section class="section magazine-grid">
+        <div>
+          <p class="section-kicker">Writing</p>
+          <h2><span data-lang="en">Latest articles</span><span data-lang="no">Siste tekster</span></h2>
+          {latestArticles.map((article) => <ArticleCard article={article} />)}
+        </div>
+        <div>
+          <p class="section-kicker">Projects</p>
+          <h2><span data-lang="en">Selected experiments</span><span data-lang="no">Utvalgte eksperimenter</span></h2>
+          {featuredProjects.map((project) => <ProjectCard project={project} compact />)}
+        </div>
+      </section>
+    </section>
+
+    <section class="layout-view" data-layout-view="photography-first">
+      <div class="photo-hero">
+        <img src={withBase(data.profile.portraitImage)} alt={data.profile.displayName} />
+        <div>
+          <p class="eyebrow">Fujifilm / code / essays</p>
+          <h1><Localize value={pickVoice(headline, "experimental")} /></h1>
+          <p class="lead"><Localize value={data.profile.shortBio} /></p>
+        </div>
+      </div>
+      <section class="section">
+        <p class="section-kicker">Photography</p>
+        <h2><span data-lang="en">Images first, words nearby</span><span data-lang="no">Bildene først, ordene i nærheten</span></h2>
+        <PhotoGrid photos={photos} />
+      </section>
+    </section>
+  </main>
+</BaseLayout>
