@@ -1,0 +1,9 @@
+{
+  "summary": { "en": "Professional summary", "no": "Profesjonelt sammendrag" },
+  "expertise": ["python", "testing"],
+  "opportunities": {
+    "headline": { "en": "Opportunities", "no": "Muligheter" },
+    "summary": { "en": "Summary", "no": "Sammendrag" },
+    "targets": []
+  }
+}

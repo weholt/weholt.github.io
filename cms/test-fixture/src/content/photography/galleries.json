@@ -1,0 +1,9 @@
+[
+  {
+    "id": "test-gallery",
+    "order": 0,
+    "title": { "en": "Test Gallery", "no": "Testgalleri" },
+    "images": ["test-gallery-001"],
+    "categories": ["travel"]
+  }
+]

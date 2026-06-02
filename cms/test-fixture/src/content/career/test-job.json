@@ -1,0 +1,10 @@
+{
+  "id": "test-job",
+  "order": 0,
+  "period": "2020–present",
+  "role": { "en": "Developer", "no": "Utvikler" },
+  "company": "Test Co",
+  "location": { "en": "Oslo", "no": "Oslo" },
+  "description": { "en": "Test role", "no": "Testrolle" },
+  "highlights": []
+}

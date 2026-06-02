@@ -1,0 +1,22 @@
+{
+  "siteName": "Test.Org",
+  "languages": ["en", "no"],
+  "defaultLanguage": "en",
+  "defaultLayout": "developer-clean",
+  "defaultTheme": "clean-light",
+  "defaultVoice": "professional",
+  "layouts": [
+    {
+      "id": "developer-clean",
+      "label": { "en": "Developer Clean", "no": "Utvikler ren" },
+      "defaultVoice": "professional"
+    }
+  ],
+  "themes": [
+    {
+      "id": "clean-light",
+      "label": { "en": "Clean Light", "no": "Lys" },
+      "defaultVoice": "professional"
+    }
+  ]
+}

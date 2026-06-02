@@ -1,0 +1,10 @@
+{
+  "id": "test-project",
+  "order": 0,
+  "title": { "en": "Test Project", "no": "Testprosjekt" },
+  "summary": { "en": "Summary", "no": "Sammendrag" },
+  "description": { "en": "Description", "no": "Beskrivelse" },
+  "status": "draft",
+  "featured": false,
+  "tags": ["test"]
+}

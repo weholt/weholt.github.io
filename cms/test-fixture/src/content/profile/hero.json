@@ -1,0 +1,17 @@
+{
+  "eyebrow": { "en": "Test eyebrow", "no": "Test øyebryn" },
+  "headline": {
+    "professional": { "en": "Test headline", "no": "Test overskrift" }
+  },
+  "subheadline": {
+    "professional": { "en": "Test subheadline", "no": "Test underoverskrift" }
+  },
+  "primaryCta": {
+    "label": { "en": "Projects", "no": "Prosjekter" },
+    "href": "/projects/"
+  },
+  "secondaryCta": {
+    "label": { "en": "Writing", "no": "Tekster" },
+    "href": "/writing/"
+  }
+}

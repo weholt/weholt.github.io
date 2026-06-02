@@ -1,0 +1,9 @@
+[
+  {
+    "id": "test-gallery-001",
+    "src": "/images/medium/test-gallery/image-001.jpg",
+    "alt": { "en": "Test photo", "no": "Testbilde" },
+    "categories": ["travel"],
+    "tags": []
+  }
+]

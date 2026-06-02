@@ -6,7 +6,6 @@
 
 .nav-toggle {
   display: none;
-  position: relative;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
@@ -18,9 +17,6 @@
   color: var(--text);
   cursor: pointer;
   flex-shrink: 0;
-  overflow: hidden;
-  font-size: 0;
-  line-height: 0;
 }
 
 .nav-toggle__bars {

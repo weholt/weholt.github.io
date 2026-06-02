@@ -1,5 +1,30 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
 .astro/
-.DS_Store
+cms/dist/
+
+# Environment & secrets
 .env
+.env.*
+!.env.example
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs & local tooling
+*.log
+.playwright-cli/
+.vite/
+
+# Optional local tooling (not needed in repo)
+.qodo/
+
+# Nested clone (separate git repo — not a submodule)
+old_site/

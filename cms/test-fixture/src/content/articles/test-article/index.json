@@ -1,0 +1,11 @@
+{
+  "id": "test-article",
+  "order": 0,
+  "title": { "en": "Test Article", "no": "Testartikkel" },
+  "summary": { "en": "Summary", "no": "Sammendrag" },
+  "date": "2026-01-01",
+  "status": "draft",
+  "tags": ["test"],
+  "featured": false,
+  "pinned": false
+}

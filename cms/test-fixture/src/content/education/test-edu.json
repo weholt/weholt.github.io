@@ -1,0 +1,8 @@
+{
+  "id": "test-edu",
+  "order": 0,
+  "period": "2010–2014",
+  "institution": "Test University",
+  "title": { "en": "Degree", "no": "Grad" },
+  "description": { "en": "Education", "no": "Utdanning" }
+}

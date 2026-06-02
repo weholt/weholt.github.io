@@ -1,0 +1,13 @@
+{
+  "name": "Test User",
+  "displayName": "Test",
+  "location": { "en": "Norway", "no": "Norge" },
+  "title": { "en": "Developer", "no": "Utvikler" },
+  "tagline": { "en": "Test tagline", "no": "Test slagord" },
+  "shortBio": { "en": "Short bio", "no": "Kort bio" },
+  "mediumBio": { "en": "Medium bio", "no": "Middels bio" },
+  "longBio": { "en": "Long bio", "no": "Lang bio" },
+  "portraitImage": "/images/profile/test.jpg",
+  "contact": { "email": "test@example.com" },
+  "socialLinks": [{ "label": "GitHub", "url": "https://github.com/weholt" }]
+}
