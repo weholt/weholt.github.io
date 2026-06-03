@@ -27,6 +27,33 @@ async (page) => {
     await page.getByRole("heading", { name: heading }).waitFor({ timeout: 10000 });
   }
 
+  async function jsonEditorText(scope) {
+    await scope.getByTestId("json-editor").locator(".cm-content").waitFor({ timeout: 10000 });
+    return page.evaluate(() => window.__cmsJsonEditor?.get() ?? "");
+  }
+
+  async function fillMarkdownEditor(text) {
+    await page.evaluate((value) => {
+      if (!window.__cmsMarkdownEditor) throw new Error("Markdown editor test hook missing");
+      window.__cmsMarkdownEditor.set(value);
+    }, text);
+    await page.waitForTimeout(200);
+  }
+
+  async function fillJsonEditor(scope, text) {
+    await page.evaluate((value) => {
+      if (!window.__cmsJsonEditor) throw new Error("JSON editor test hook missing");
+      window.__cmsJsonEditor.set(value);
+    }, text);
+    await page.waitForTimeout(200);
+  }
+
+  async function waitForStatus(scope, _text, timeout = 10000) {
+    const status = scope.locator(".status").first();
+    await status.waitFor({ timeout });
+    return status.textContent();
+  }
+
   await goto("/");
   record("dashboard: heading", (await page.locator("h2").textContent()) === "Dashboard");
 
@@ -38,21 +65,18 @@ async (page) => {
   const main = page.locator(".main");
   await main.getByTestId("json-editor").waitFor({ timeout: 10000 });
   record("profile: loads JSON editor", (await main.getByTestId("json-editor").count()) >= 1);
-  const profileJson = await main.getByTestId("json-editor").inputValue();
+  const profileJson = await jsonEditorText(main);
   record("profile: has test user", profileJson.includes("Test User"));
 
   const profileEdited = profileJson.replace("Test User", "Test User Edited");
-  const editor = main.getByTestId("json-editor");
-  await editor.click();
-  await page.keyboard.press("Control+A");
-  await page.keyboard.insertText(profileEdited);
-  record("profile: fill applied", (await editor.inputValue()).includes("Test User Edited"));
+  await fillJsonEditor(main, profileEdited);
+  record("profile: fill applied", (await jsonEditorText(main)).includes("Test User Edited"));
   await main.getByRole("button", { name: "Save" }).click();
-  await page.waitForTimeout(300);
-  record("profile: save message", (await page.locator(".status.ok").textContent())?.includes("Saved"));
+  const profileSaveStatus = await waitForStatus(main, "Saved");
+  record("profile: save message", profileSaveStatus?.includes("Saved"), profileSaveStatus ?? "");
 
   await clickNav("Profile");
-  const profileAfter = await main.getByTestId("json-editor").inputValue();
+  const profileAfter = await jsonEditorText(main);
   record("profile: persists edit", profileAfter.includes("Test User Edited"));
 
   await clickNav("Career");
@@ -63,14 +87,11 @@ async (page) => {
 
   await careerItem.first().click();
   await page.waitForTimeout(200);
-  const careerJson = await page.locator("textarea").first().inputValue();
+  const careerJson = await jsonEditorText(main);
   record("career: loads item JSON", careerJson.includes("test-job"));
 
   const careerEdited = careerJson.replace("Test Co", "Test Co Updated");
-  const careerEditor = main.getByTestId("json-editor");
-  await careerEditor.click();
-  await page.keyboard.press("Control+A");
-  await page.keyboard.insertText(careerEdited);
+  await fillJsonEditor(main, careerEdited);
   await main.getByRole("button", { name: "Save" }).click();
   await page.waitForTimeout(300);
   record("career: save works", (await page.locator(".status.ok").count()) >= 1);
@@ -89,7 +110,8 @@ async (page) => {
   record("article editor: metadata tab", (await page.getByRole("button", { name: "Metadata" }).count()) >= 1);
 
   await page.getByRole("button", { name: "Body (EN)" }).click();
-  await page.locator("textarea").fill("# E2E edited body\n");
+  await page.getByTestId("markdown-editor").waitFor({ timeout: 10000 });
+  await fillMarkdownEditor("# E2E edited body\n");
   await page.getByRole("button", { name: "Save" }).click();
   await page.waitForTimeout(300);
   record("article: save body", (await page.locator(".status.ok").count()) >= 1);
@@ -99,7 +121,7 @@ async (page) => {
   record("categories: item in list", (await page.getByRole("button", { name: /travel/i }).count()) >= 1);
 
   await page.getByRole("button", { name: /travel/i }).first().click();
-  const catJson = await page.locator("textarea").first().inputValue();
+  const catJson = await jsonEditorText(main);
   record("categories: JSON loads", catJson.includes("travel"));
 
   await openPage("/photography/photos", "Photos");

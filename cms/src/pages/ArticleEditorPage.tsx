@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api, type ArticlePayload } from "../api";
 import { JsonEditor } from "../components/JsonEditor";
+import { MarkdownEditor } from "../components/MarkdownEditor";
 import { SaveBar } from "../components/SaveBar";
 
 export function ArticleEditorPage() {
@@ -40,7 +41,7 @@ export function ArticleEditorPage() {
   if (!data) return <p>Loading…</p>;
 
   return (
-    <div>
+    <div className="article-editor-page">
       <p>
         <Link to="/articles">← Articles</Link>
       </p>
@@ -48,30 +49,34 @@ export function ArticleEditorPage() {
       <SaveBar dirty={dirty} saving={saving} onSave={() => void save()} />
       {message && <div className={`status ${message.ok ? "ok" : "error"}`}>{message.text}</div>}
       <div className="tabs">
-        <button className={tab === "meta" ? "active" : ""} onClick={() => setTab("meta")}>
+        <button type="button" className={tab === "meta" ? "active" : ""} onClick={() => setTab("meta")}>
           Metadata
         </button>
-        <button className={tab === "en" ? "active" : ""} onClick={() => setTab("en")}>
+        <button type="button" className={tab === "en" ? "active" : ""} onClick={() => setTab("en")}>
           Body (EN)
         </button>
-        <button className={tab === "no" ? "active" : ""} onClick={() => setTab("no")}>
+        <button type="button" className={tab === "no" ? "active" : ""} onClick={() => setTab("no")}>
           Body (NO)
         </button>
       </div>
-      <div className="panel">
-        {tab === "meta" && <JsonEditor value={data.meta} onChange={(meta) => setData({ ...data, meta: meta as Record<string, unknown> })} />}
+      <div className="panel article-editor-panel">
+        {tab === "meta" && (
+          <JsonEditor value={data.meta} onChange={(meta) => setData({ ...data, meta: meta as Record<string, unknown> })} />
+        )}
         {tab === "en" && (
-          <textarea
+          <MarkdownEditor
+            key="body-en"
+            label="Body (EN)"
             value={data.bodyEn}
-            onChange={(event) => setData({ ...data, bodyEn: event.target.value })}
-            style={{ width: "100%", minHeight: "28rem", fontFamily: "Consolas, monospace" }}
+            onChange={(bodyEn) => setData({ ...data, bodyEn })}
           />
         )}
         {tab === "no" && (
-          <textarea
+          <MarkdownEditor
+            key="body-no"
+            label="Body (NO)"
             value={data.bodyNo}
-            onChange={(event) => setData({ ...data, bodyNo: event.target.value })}
-            style={{ width: "100%", minHeight: "28rem", fontFamily: "Consolas, monospace" }}
+            onChange={(bodyNo) => setData({ ...data, bodyNo })}
           />
         )}
       </div>

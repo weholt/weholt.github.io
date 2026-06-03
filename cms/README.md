@@ -2,16 +2,29 @@
 
 Local React app for managing site content and media files.
 
+## Setup
+
+From the **repo root** (recommended):
+
+```bash
+npm run setup
+```
+
+Or only CMS dependencies:
+
+```bash
+node scripts/setup.mjs --skip-root
+```
+
 ## Start
 
 ```bash
 npm run cms
 ```
 
-Or from the `cms/` folder:
+Or from the `cms/` folder (after setup):
 
 ```bash
-npm install
 npm run dev
 ```
 

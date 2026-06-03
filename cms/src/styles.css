@@ -148,6 +148,178 @@ textarea {
   resize: vertical;
 }
 
+.json-editor-field {
+  margin-bottom: 0;
+}
+
+.json-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.json-editor-header label {
+  margin: 0;
+}
+
+.json-editor-format {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+.json-editor-cm {
+  min-height: 0;
+}
+
+.json-editor-cm .cm-editor {
+  height: 100%;
+}
+
+.json-editor-cm .cm-focused {
+  outline: none;
+}
+
+.markdown-editor-field {
+  margin-bottom: 0;
+}
+
+.markdown-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-editor-header > label:first-child {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.markdown-preview-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.markdown-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.markdown-editor-layout--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.markdown-editor-cm .cm-editor {
+  height: 100%;
+}
+
+.markdown-editor-cm .cm-focused {
+  outline: none;
+}
+
+.markdown-preview {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: var(--surface-2);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4 {
+  margin: 1.1em 0 0.45em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.markdown-preview h1 {
+  font-size: 1.6rem;
+}
+
+.markdown-preview h2 {
+  font-size: 1.35rem;
+}
+
+.markdown-preview h3 {
+  font-size: 1.15rem;
+}
+
+.markdown-preview p {
+  margin: 0.65em 0;
+}
+
+.markdown-preview a {
+  color: var(--accent);
+}
+
+.markdown-preview code {
+  font-family: Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.markdown-preview pre {
+  margin: 0.75em 0;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown-preview pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.markdown-preview blockquote {
+  margin: 0.75em 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  margin: 0.65em 0;
+  padding-left: 1.4rem;
+}
+
+.markdown-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.markdown-preview hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.25em 0;
+}
+
+.article-editor-panel {
+  padding: 0.75rem;
+}
+
+@media (max-width: 1100px) {
+  .markdown-editor-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .localized {
   border: 1px solid var(--border);
   border-radius: 8px;

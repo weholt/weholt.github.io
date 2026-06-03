@@ -9,8 +9,10 @@ Astro, TypeScript, Zod validation, Markdown article bodies, static GitHub Pages 
 ## Quick start
 
 ```bash
-npm install
+npm run setup
 ```
+
+Installs dependencies for the Astro site and the local CMS (`cms/`). On a fresh clone, run this once before anything else.
 
 ```bash
 npm run dev
@@ -73,6 +75,17 @@ src/content/photography/galleries.json
 ## Agent instructions
 
 See `.agent/skills/personal-homepage-content/SKILL.md`.
+
+## Local CMS (React editor)
+
+Edit `src/content/` and upload images via the built-in CMS:
+
+```bash
+npm run setup    # if you have not already
+npm run cms        # http://localhost:5174
+```
+
+See `cms/README.md` and `scripts/README.md` for details, e2e tests, and setup options.
 
 ## Human CMS option
 

@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "setup:e2e": "node scripts/setup.mjs --e2e",
     "dev": "astro dev",
     "validate": "tsx src/scripts/validate-content.ts",
     "assign-images": "tsx src/scripts/assign-unsplash-images.ts",
