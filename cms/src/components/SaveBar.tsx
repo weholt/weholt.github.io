@@ -18,7 +18,7 @@ export function SaveBar({ dirty, saving, onSave, onValidate, extra }: Props) {
         </button>
       )}
       {extra}
-      {dirty && <span style={{ color: "var(--muted)", alignSelf: "center" }}>Unsaved changes</span>}
+      {dirty && <span className="unsaved-hint">Unsaved changes</span>}
     </div>
   );
 }

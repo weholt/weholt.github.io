@@ -117,7 +117,7 @@ export function ArrayEditorPage({ section, title, itemLabel, searchable }: Props
       {message && <div className={`status ${message.ok ? "ok" : "error"}`}>{message.text}</div>}
 
       {loading ? (
-        <p style={{ color: "var(--muted)" }}>Loading…</p>
+        <p className="loading-hint">Loading…</p>
       ) : (
       <div className="list-panel">
         <div>
@@ -126,7 +126,7 @@ export function ArrayEditorPage({ section, title, itemLabel, searchable }: Props
               placeholder="Search…"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              style={{ width: "100%", marginBottom: "0.5rem" }}
+              className="search-input"
             />
           )}
           <div className="item-list" style={{ maxHeight: "70vh", overflow: "auto" }}>
@@ -137,11 +137,11 @@ export function ArrayEditorPage({ section, title, itemLabel, searchable }: Props
                 onClick={() => setSelectedId(item.id ?? null)}
               >
                 <div>{item.title?.en || item.id}</div>
-                <div style={{ fontSize: "0.75rem", color: "var(--muted)" }}>{item.id}</div>
+                <div className="item-meta">{item.id}</div>
               </button>
             ))}
           </div>
-          <div style={{ marginTop: "0.5rem", color: "var(--muted)", fontSize: "0.85rem" }}>
+          <div className="list-footer">
             {items.length} item(s)
             {query.trim() ? ` · ${filtered.length} shown` : ""}
           </div>

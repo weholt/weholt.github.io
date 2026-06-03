@@ -136,12 +136,14 @@ export function GalleriesPage() {
   }
 
   return (
-    <div>
-      <h2>Galleries</h2>
-      <p style={{ color: "var(--muted)", marginTop: 0 }}>
-        Edit gallery metadata here. Image uploads are saved to <code>photos.json</code> and linked via{" "}
-        <code>images</code> on the selected gallery.
-      </p>
+    <div className="page">
+      <header className="page-header">
+        <h2>Galleries</h2>
+        <p className="page-lead">
+          Edit gallery metadata here. Image uploads are saved to <code>photos.json</code> and linked via{" "}
+          <code>images</code> on the selected gallery.
+        </p>
+      </header>
 
       <SaveBar
         dirty={dirty}
@@ -163,11 +165,11 @@ export function GalleriesPage() {
       {message && <div className={`status ${message.ok ? "ok" : "error"}`}>{message.text}</div>}
 
       {loading ? (
-        <p style={{ color: "var(--muted)" }}>Loading galleries…</p>
+        <p className="loading-hint">Loading galleries…</p>
       ) : (
         <div className="list-panel">
           <div>
-            <div className="item-list" style={{ maxHeight: "70vh", overflow: "auto" }}>
+            <div className="item-list item-list-scroll">
               {galleries.map((item) => (
                 <button
                   key={item.id}
@@ -176,13 +178,13 @@ export function GalleriesPage() {
                   onClick={() => setSelectedId(item.id ?? null)}
                 >
                   <div>{item.title?.en || item.id}</div>
-                  <div style={{ fontSize: "0.75rem", color: "var(--muted)" }}>
+                  <div className="item-meta">
                     {item.id} · {(item.images ?? []).length} photo(s)
                   </div>
                 </button>
               ))}
             </div>
-            <div style={{ marginTop: "0.5rem", color: "var(--muted)", fontSize: "0.85rem" }}>
+            <div className="list-footer">
               {galleries.length} gallery(ies)
             </div>
           </div>

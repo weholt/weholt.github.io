@@ -14,9 +14,9 @@ export const cmsEditorTheme = EditorView.theme(
       overflow: "hidden"
     },
     ".cm-scroller": {
-      fontFamily: 'Consolas, "Courier New", monospace',
-      fontSize: "0.85rem",
-      lineHeight: "1.55"
+      fontFamily: "var(--font-mono)",
+      fontSize: "0.8125rem",
+      lineHeight: "1.6"
     },
     ".cm-content": {
       caretColor: "var(--text)",
@@ -29,16 +29,16 @@ export const cmsEditorTheme = EditorView.theme(
       borderRight: "1px solid var(--border)"
     },
     ".cm-activeLineGutter": {
-      backgroundColor: "rgba(110, 168, 254, 0.12)"
+      backgroundColor: "rgba(91, 159, 212, 0.12)"
     },
     ".cm-activeLine": {
-      backgroundColor: "rgba(110, 168, 254, 0.08)"
+      backgroundColor: "rgba(91, 159, 212, 0.08)"
     },
     "&.cm-focused .cm-cursor": {
       borderLeftColor: "var(--accent)"
     },
     "&.cm-focused .cm-selectionBackground, .cm-selectionBackground": {
-      backgroundColor: "rgba(110, 168, 254, 0.28) !important"
+      backgroundColor: "rgba(91, 159, 212, 0.28) !important"
     },
     ".cm-foldPlaceholder": {
       backgroundColor: "var(--surface-2)",

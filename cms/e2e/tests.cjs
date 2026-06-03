@@ -116,7 +116,7 @@ async (page) => {
   await page.waitForTimeout(300);
   record("article: save body", (await page.locator(".status.ok").count()) >= 1);
 
-  await clickNav("Photo categories");
+  await clickNav("Categories");
   await page.locator(".item-list button").filter({ hasText: "travel" }).first().waitFor({ timeout: 10000 });
   record("categories: item in list", (await page.getByRole("button", { name: /travel/i }).count()) >= 1);
 

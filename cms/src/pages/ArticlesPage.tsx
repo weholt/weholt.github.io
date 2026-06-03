@@ -38,8 +38,10 @@ export function ArticlesPage() {
   }
 
   return (
-    <div>
-      <h2>Articles</h2>
+    <div className="page">
+      <header className="page-header">
+        <h2>Articles</h2>
+      </header>
       <div className="toolbar">
         <input placeholder="new-article-id" value={newId} onChange={(event) => setNewId(event.target.value)} />
         <button className="btn" onClick={() => void createArticle()}>
@@ -48,10 +50,10 @@ export function ArticlesPage() {
       </div>
       <div className="panel">
         {items.map((item) => (
-          <div key={item.id} style={{ display: "flex", justifyContent: "space-between", padding: "0.5rem 0", borderBottom: "1px solid var(--border)" }}>
+          <div key={item.id} className="article-row">
             <div>
               <Link to={`/articles/${item.id}`}>{item.label || item.id}</Link>
-              <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+              <div className="item-meta">
                 {item.date} · {item.status}
               </div>
             </div>

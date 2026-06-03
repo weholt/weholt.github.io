@@ -18,12 +18,14 @@ export function DashboardPage() {
   }
 
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <p style={{ color: "var(--muted)" }}>
-        Local content manager for Weholt.org. Edits write directly to <code>src/content/</code> and{" "}
-        <code>public/images/</code>.
-      </p>
+    <div className="page">
+      <header className="page-header">
+        <h2>Dashboard</h2>
+        <p className="page-lead">
+          Local content manager for Weholt.org. Edits write directly to <code>src/content/</code> and{" "}
+          <code>public/images/</code>.
+        </p>
+      </header>
       <div className="toolbar">
         <button className="btn btn-primary" disabled={busy !== null} onClick={() => void run("validate")}>
           {busy === "validate" ? "Validating…" : "Validate content"}

@@ -58,13 +58,15 @@ export function MediaPage() {
 
   return (
     <div className="media-page">
-      <h2>Media library</h2>
-      <p style={{ color: "var(--muted)", marginTop: 0 }}>
-        Browse and upload files under <code>public/images/</code>.
-      </p>
+      <header className="page-header">
+        <h2>Media library</h2>
+        <p className="page-lead">
+          Browse and upload files under <code>public/images/</code>.
+        </p>
+      </header>
 
       <div className="media-toolbar panel">
-        <div className="field" style={{ marginBottom: 0 }}>
+        <div className="field field-inline">
           <label>Current folder</label>
           <div className="toolbar">
             <code>images/{dir || "(root)"}</code>
@@ -84,9 +86,9 @@ export function MediaPage() {
 
       <section className="media-browser" aria-label="Folders and files">
         {loading ? (
-          <p style={{ color: "var(--muted)" }}>Loading…</p>
+          <p className="loading-hint">Loading…</p>
         ) : entries.length === 0 ? (
-          <p style={{ color: "var(--muted)" }}>This folder is empty.</p>
+          <p className="text-muted">This folder is empty.</p>
         ) : (
           <div className="media-grid">
             {folders.map((entry) => (
@@ -119,7 +121,7 @@ export function MediaPage() {
 
       <details className="panel media-upload-panel">
         <summary>Upload files</summary>
-        <div className="grid-2" style={{ marginTop: "0.75rem" }}>
+        <div className="grid-2 grid-spaced">
           <div className="field">
             <label>Upload destination (relative to images/)</label>
             <input

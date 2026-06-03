@@ -147,11 +147,11 @@ export function CollectionPage({ section, title }: Props) {
                 onClick={() => void selectItem(item.id)}
               >
                 <div>{item.label || item.id}</div>
-                <div style={{ fontSize: "0.75rem", color: "var(--muted)" }}>{item.id}</div>
+                <div className="item-meta">{item.id}</div>
               </button>
             ))}
           </div>
-          <div className="toolbar" style={{ marginTop: "0.75rem" }}>
+          <div className="toolbar toolbar-spaced">
             <input placeholder="new-id" value={newId} onChange={(event) => setNewId(event.target.value)} />
             <button className="btn" onClick={() => void createItem()}>
               Add
